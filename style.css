@@ -4411,8 +4411,31 @@ body.gallery-open {
 }
 /* =========================================================
 /* =========================================================
-   FINAL FIX — PROFESSIONAL GALLERY
-   SHOW ALL 9 PHOTOS
+   PROFESSIONAL GALLERY — FINAL CLEAN VERSION
+========================================================= */
+
+.gallery-section {
+    position: relative;
+    overflow: visible !important;
+}
+
+
+/* INTRO */
+
+.gallery-intro {
+    max-width: 680px;
+    margin: -25px 0 35px 44px;
+}
+
+.gallery-intro p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   GALLERY GRID
 ========================================================= */
 
 #activityGallery {
@@ -4421,7 +4444,7 @@ body.gallery-open {
     grid-template-columns:
         repeat(3, minmax(0, 1fr)) !important;
 
-    gap: 20px !important;
+    gap: 22px !important;
 
     width: 100% !important;
 
@@ -4431,25 +4454,25 @@ body.gallery-open {
 
     overflow: visible !important;
 
-    margin: 0 !important;
-    padding: 0 !important;
+    grid-auto-rows: auto !important;
+
+    align-items: stretch !important;
 }
 
 
-/* =========================================
-   EACH GALLERY PHOTO
-========================================= */
+/* =========================================================
+   GALLERY CARD
+========================================================= */
 
-#activityGallery .gallery-item {
-    display: block !important;
-
+#activityGallery .gallery-item,
+#activityGallery .gallery-item-wide {
     position: relative !important;
+
+    display: block !important;
 
     width: 100% !important;
 
     height: 280px !important;
-
-    min-width: 0 !important;
     min-height: 280px !important;
 
     margin: 0 !important;
@@ -4457,31 +4480,38 @@ body.gallery-open {
 
     overflow: hidden !important;
 
-    border: 1px solid var(--border) !important;
+    grid-column: auto !important;
+
+    border:
+        1px solid rgba(255,255,255,0.08) !important;
 
     border-radius: 16px !important;
 
     background: #0d121c !important;
 
+    opacity: 1 !important;
+    visibility: visible !important;
+
     cursor: pointer !important;
 
-    opacity: 1 !important;
-
-    visibility: visible !important;
+    box-sizing: border-box !important;
 }
 
 
-/* =========================================
-   PHOTO
-========================================= */
+/* =========================================================
+   IMAGE
+========================================================= */
 
-#activityGallery .gallery-item img {
+#activityGallery .gallery-item img,
+#activityGallery .gallery-item-wide img {
+
+    position: absolute !important;
+
+    inset: 0 !important;
+
     display: block !important;
 
-    position: relative !important;
-
     width: 100% !important;
-
     height: 100% !important;
 
     min-width: 100% !important;
@@ -4492,33 +4522,36 @@ body.gallery-open {
     object-position: center !important;
 
     opacity: 1 !important;
-
     visibility: visible !important;
 
     transform: scale(1) !important;
 
     transition:
-        transform 0.5s ease,
-        filter 0.5s ease !important;
+        transform 0.45s ease,
+        filter 0.45s ease !important;
 }
 
 
-/* =========================================
-   HOVER PHOTO
-========================================= */
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
 
-#activityGallery .gallery-item:hover img {
-    transform: scale(1.06) !important;
+#activityGallery .gallery-item:hover img,
+#activityGallery .gallery-item-wide:hover img {
+
+    transform: scale(1.05) !important;
 
     filter: brightness(0.82) !important;
 }
 
 
-/* =========================================
+/* =========================================================
    DARK GRADIENT
-========================================= */
+========================================================= */
 
-#activityGallery .gallery-item::after {
+#activityGallery .gallery-item::after,
+#activityGallery .gallery-item-wide::after {
+
     content: "";
 
     position: absolute;
@@ -4532,21 +4565,23 @@ body.gallery-open {
     background:
         linear-gradient(
             to top,
-            rgba(5, 8, 14, 0.88),
-            rgba(5, 8, 14, 0.05) 65%
+            rgba(3,7,12,0.88) 0%,
+            rgba(3,7,12,0.25) 45%,
+            rgba(3,7,12,0.02) 75%
         );
 }
 
 
-/* =========================================
-   GALLERY TEXT
-========================================= */
+/* =========================================================
+   OVERLAY
+========================================================= */
 
 #activityGallery .gallery-overlay {
+
     position: absolute !important;
 
-    left: 16px !important;
-    right: 16px !important;
+    left: 15px !important;
+    right: 15px !important;
     bottom: 14px !important;
 
     z-index: 3 !important;
@@ -4561,27 +4596,27 @@ body.gallery-open {
 
     width: auto !important;
 
+    margin: 0 !important;
     padding: 0 !important;
 
     color: white !important;
 
     font-size: 11px !important;
-
     font-weight: 700 !important;
 
     opacity: 1 !important;
-
     visibility: visible !important;
 
     background: transparent !important;
 }
 
 
-/* =========================================
-   ZOOM ICON
-========================================= */
+/* =========================================================
+   EXPAND ICON
+========================================================= */
 
 #activityGallery .gallery-overlay i {
+
     display: grid !important;
 
     width: 34px !important;
@@ -4592,44 +4627,39 @@ body.gallery-open {
     place-items: center !important;
 
     border:
-        1px solid
-        rgba(255,255,255,0.18) !important;
+        1px solid rgba(255,255,255,0.18) !important;
 
     border-radius: 50% !important;
 
     background:
-        rgba(255,255,255,0.08) !important;
+        rgba(10,15,24,0.65) !important;
 
     color: var(--blue-light) !important;
+
+    backdrop-filter: blur(8px);
 }
 
 
-/* =========================================
-   REMOVE OLD WIDE LAYOUT
-========================================= */
+/* =========================================================
+   REMOVE OLD SPECIAL LAYOUT
+========================================================= */
 
 #activityGallery .gallery-item-wide {
     grid-column: auto !important;
 }
-
-
-/* =========================================
-   REMOVE OLD 4TH PHOTO SPAN
-========================================= */
 
 #activityGallery .gallery-item:nth-child(4n) {
     grid-column: auto !important;
 }
 
 
-/* =========================================
+/* =========================================================
    NOTICE
-========================================= */
+========================================================= */
 
 #activityGallery .gallery-notice {
-    grid-column: 1 / -1 !important;
 
-    width: 100% !important;
+    grid-column: 1 / -1 !important;
 
     min-height: 180px !important;
 
@@ -4646,8 +4676,7 @@ body.gallery-open {
     padding: 30px !important;
 
     border:
-        1px dashed
-        rgba(255,255,255,0.13) !important;
+        1px dashed rgba(255,255,255,0.13) !important;
 
     border-radius: 16px !important;
 
@@ -4664,16 +4693,20 @@ body.gallery-open {
 @media (max-width: 900px) {
 
     #activityGallery {
+
         grid-template-columns:
             repeat(2, minmax(0, 1fr)) !important;
 
         gap: 18px !important;
+
     }
 
-    #activityGallery .gallery-item {
-        height: 260px !important;
+    #activityGallery .gallery-item,
+    #activityGallery .gallery-item-wide {
 
+        height: 260px !important;
         min-height: 260px !important;
+
     }
 
 }
@@ -4685,41 +4718,56 @@ body.gallery-open {
 
 @media (max-width: 600px) {
 
-    #activityGallery {
-        grid-template-columns: 1fr !important;
+    .gallery-intro {
 
-        gap: 16px !important;
+        margin-left: 0 !important;
+
     }
 
-    #activityGallery .gallery-item {
+    #activityGallery {
+
+        grid-template-columns:
+            1fr !important;
+
+        gap: 16px !important;
+
+    }
+
+    #activityGallery .gallery-item,
+    #activityGallery .gallery-item-wide {
+
         width: 100% !important;
 
         height: 280px !important;
-
         min-height: 280px !important;
 
         border-radius: 15px !important;
+
     }
 
     #activityGallery .gallery-overlay {
-        left: 14px !important;
-        right: 14px !important;
-        bottom: 13px !important;
+
+        left: 13px !important;
+        right: 13px !important;
+        bottom: 12px !important;
+
     }
 
 }
 
 
 /* =========================================================
-   VERY SMALL PHONE
+   SMALL PHONE
 ========================================================= */
 
 @media (max-width: 400px) {
 
-    #activityGallery .gallery-item {
-        height: 250px !important;
+    #activityGallery .gallery-item,
+    #activityGallery .gallery-item-wide {
 
+        height: 250px !important;
         min-height: 250px !important;
+
     }
 
 }
