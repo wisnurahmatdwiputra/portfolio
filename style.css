@@ -4367,3 +4367,45 @@ body.gallery-open {
     .gallery-item,.gallery-item-wide{height:230px !important;}
     .gallery-intro{margin-left:0 !important;}
 }
+@media (max-width: 650px) {
+
+    .certification-section {
+        padding-top: 70px;
+        padding-bottom: 80px;
+    }
+
+    .certification-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .certificate-image {
+        height: 300px;
+    }
+
+    .certification-content {
+        padding: 20px;
+    }
+
+    .certification-content h3 {
+        font-size: 17px;
+    }
+
+    .certificate-lightbox {
+        padding: 20px;
+    }
+
+    .certificate-lightbox-content img {
+        max-width: 95vw;
+        max-height: 85vh;
+    }
+
+    .certificate-lightbox-close {
+        top: 15px;
+        right: 15px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+}
