@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <title>Wisnu Rahmat Dwi Putra | Electrical Engineer</title>
 
     <meta name="description"
-        content="Portfolio of Wisnu Rahmat Dwi Putra - Electrical Engineer, Embedded Systems, IoT, Maintenance & Instrumentation.">
+        content="Portfolio Wisnu Rahmat Dwi Putra - Electrical Engineer, Embedded System, IoT, Maintenance & Instrumentation.">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,6 +25,36 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ================= CERTIFICATION GALLERY ================= */
+        .certification-intro { max-width: 680px; margin: -8px 0 42px; }
+        .certification-intro p { color: var(--text-muted); line-height: 1.8; font-size: 15px; }
+        .certification-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
+        .certification-card { overflow:hidden; background:var(--card-bg); border:1px solid var(--border-color); border-radius:18px; transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease; }
+        .certification-card:hover { transform:translateY(-7px); border-color:rgba(255,255,255,.18); box-shadow:0 20px 45px rgba(0,0,0,.18); }
+        .certificate-image { position:relative; display:block; width:100%; height:285px; padding:0; border:0; background:#111; overflow:hidden; cursor:pointer; }
+        .certificate-image img { width:100%; height:100%; display:block; object-fit:contain; transition:transform .45s ease; }
+        .certification-card:hover .certificate-image img { transform:scale(1.035); }
+        .certificate-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:10px; background:rgba(0,0,0,.62); color:#fff; font-size:14px; font-weight:600; opacity:0; transition:opacity .3s ease; }
+        .certificate-image:hover .certificate-overlay { opacity:1; }
+        .certification-content { padding:22px 23px 25px; }
+        .certification-meta { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+        .certification-meta span { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--accent-color); }
+        .certification-meta i { font-size:17px; color:var(--accent-color); }
+        .certification-content h3 { margin:0 0 8px; font-size:18px; line-height:1.4; }
+        .certification-content p { margin:0; color:var(--text-muted); font-size:13px; line-height:1.6; }
+        .certificate-lightbox { position:fixed; inset:0; z-index:99999; display:flex; align-items:center; justify-content:center; padding:40px; background:rgba(0,0,0,.93); opacity:0; visibility:hidden; pointer-events:none; transition:opacity .25s ease,visibility .25s ease; }
+        .certificate-lightbox.show { opacity:1; visibility:visible; pointer-events:auto; }
+        .certificate-lightbox-content { max-width:92vw; max-height:90vh; display:flex; align-items:center; justify-content:center; }
+        .certificate-lightbox-content img { max-width:92vw; max-height:88vh; width:auto; height:auto; object-fit:contain; border-radius:8px; box-shadow:0 25px 80px rgba(0,0,0,.55); }
+        .certificate-lightbox-close { position:absolute; top:24px; right:28px; width:48px; height:48px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.2); border-radius:50%; background:rgba(255,255,255,.08); color:#fff; font-size:20px; cursor:pointer; transition:all .3s ease; }
+        .certificate-lightbox-close:hover { background:rgba(255,255,255,.18); transform:rotate(90deg); }
+        body.gallery-open { overflow:hidden; }
+        @media (max-width:1000px) { .certification-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+        @media (max-width:650px) { .certification-grid { grid-template-columns:1fr; } .certificate-image { height:300px; } .certificate-lightbox { padding:20px; } .certificate-lightbox-content img { max-width:95vw; max-height:84vh; } .certificate-lightbox-close { top:15px; right:15px; } }
+    </style>
+
 </head>
 
 
@@ -105,7 +135,7 @@
                     <h2>
                         Electrical Engineer
                         <b>|</b>
-                        Embedded Systems
+                        Embedded System
                         <b>|</b>
                         IoT
                     </h2>
@@ -113,11 +143,10 @@
 
                     <p class="hero-description">
 
-                        Electrical Engineering graduate from
-                        Universitas Tadulako with expertise in
-                        Embedded Systems, Internet of Things,
-                        Maintenance, Instrumentation, and
-                        Control Systems.
+                        Lulusan S1 Teknik Elektro Universitas Tadulako
+                        dengan kompetensi di bidang Embedded System,
+                        Internet of Things, Maintenance, Instrumentasi,
+                        dan sistem kontrol.
 
                     </p>
 
@@ -125,22 +154,22 @@
                     <div class="hero-buttons">
 
                         <a href="#projects" class="btn btn-primary">
+
                             View My Projects
+
                             <i class="fa-solid fa-arrow-right"></i>
+
                         </a>
+
 
                         <a href="#contact" class="btn btn-outline">
-                            Contact Me
-                        </a>
 
-                        <a href="Wisnu Rahmat Dwi Putra 2026 CV.pdf"
-                        class="btn btn-outline resume-button"
-                        download>
-                            Download CV
-                            <i class="fa-solid fa-download"></i>
+                            Contact Me
+
                         </a>
 
                     </div>
+
 
                     <div class="social-links">
 
@@ -179,58 +208,27 @@
                 <div class="hero-visual">
 
                     <div class="professional-profile">
-
                         <div class="profile-frame">
-
-                            <img
-                                src="profil-profesional.jpg"
-                                alt="Professional photo of Wisnu Rahmat Dwi Putra">
-
+                            <img src="profil-profesional.jpg" alt="Foto profesional Wisnu Rahmat Dwi Putra">
                         </div>
-
 
                         <div class="profile-caption">
-
-                            <span>
-                                ENGINEERING PROFILE
-                            </span>
-
-                            <strong>
-                                Electrical Engineer
-                            </strong>
-
-                            <small>
-                                Embedded Systems • IoT • Automation
-                            </small>
-
+                            <span>ENGINEERING PROFILE</span>
+                            <strong>Electrical Engineer</strong>
+                            <small>Embedded System • IoT • Automation</small>
                         </div>
-
 
                         <div class="profile-badges">
-
                             <div class="profile-badge">
-
                                 <i class="fa-solid fa-microchip"></i>
-
-                                <span>
-                                    Embedded & IoT
-                                </span>
-
+                                <span>Embedded & IoT</span>
                             </div>
-
 
                             <div class="profile-badge">
-
                                 <i class="fa-solid fa-bolt"></i>
-
-                                <span>
-                                    Electrical
-                                </span>
-
+                                <span>Electrical</span>
                             </div>
-
                         </div>
-
                     </div>
 
                 </div>
@@ -249,7 +247,7 @@
                 <div class="section-heading">
 
                     <span class="section-number">
-                        02
+                        03
                     </span>
 
                     <div>
@@ -274,36 +272,34 @@
 
                         <p class="lead">
 
-                            I am an
-                            <strong>
-                                Electrical Engineering graduate
-                                from Universitas Tadulako
-                            </strong>
-                            with a focus on Embedded Systems,
+                            Saya adalah lulusan
+                            <strong>S1 Teknik Elektro Universitas
+                            Tadulako</strong>
+                            dengan fokus pada Embedded System,
                             Internet of Things, Maintenance,
-                            and Instrumentation.
+                            dan Instrumentasi.
 
                         </p>
 
 
                         <p>
 
-                            I have experience in developing
-                            microcontroller-based systems,
-                            sensor integration, C/C++ programming,
-                            IoT communication, system testing,
-                            and troubleshooting.
+                            Saya memiliki pengalaman dalam
+                            pengembangan sistem berbasis
+                            mikrokontroler, integrasi sensor,
+                            pemrograman C/C++, komunikasi IoT,
+                            pengujian, dan troubleshooting.
 
                         </p>
 
 
                         <p>
 
-                            I also have experience in preventive
-                            and corrective maintenance, CCTV
-                            installation and maintenance,
-                            electrical system troubleshooting,
-                            and equipment inspection.
+                            Saya juga memiliki pengalaman dalam
+                            preventive dan corrective maintenance,
+                            instalasi dan perawatan CCTV,
+                            troubleshooting sistem listrik,
+                            serta inspeksi peralatan.
 
                         </p>
 
@@ -317,7 +313,7 @@
                                 </span>
 
                                 <strong>
-                                    Bachelor of Electrical Engineering
+                                    S1 Teknik Elektro
                                 </strong>
 
                             </div>
@@ -356,7 +352,7 @@
                                 </span>
 
                                 <strong>
-                                    Palu, Central Sulawesi
+                                    Palu, Sulawesi Tengah
                                 </strong>
 
                             </div>
@@ -434,739 +430,479 @@
         </section>
 
 
-        <!-- ================= PROFESSIONAL EXPERIENCE ================= -->
+        <!-- ================= EXPERIENCE ================= -->
 
-        <section id="experience" class="experience-section">
+<!-- ==================== EXPERIENCE ==================== -->
+<section id="experience" class="experience-section">
 
-            <div class="section-heading">
+    <div class="section-heading">
+        <div class="section-number">02</div>
 
-                <div class="section-number">
-                    03
-                </div>
+        <div>
+            <span class="section-label">EXPERIENCE</span>
+            <h2>Professional Journey<span>.</span></h2>
+        </div>
+    </div>
 
-                <div>
 
-                    <span class="section-label">
-                        EXPERIENCE
-                    </span>
+    <div class="experience-timeline">
 
-                    <h2>
-                        Professional Journey<span>.</span>
-                    </h2>
 
+        <!-- 01 - PT AYODYA -->
+        <div class="experience-item">
+
+            <div class="experience-date">
+                <span>May</span>
+                <span>2026</span>
+                <small>–</small>
+                <span>Jul</span>
+                <span>2026</span>
+            </div>
+
+            <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+                <span class="experience-type">
+                    ELECTRONIC TECHNICIAN
+                </span>
+
+                <h3>PT Ayodya Dialog Semesta</h3>
+
+                <h4>Electronic Technician</h4>
+
+                <p>
+                    Melakukan instalasi, preventive maintenance, dan
+                    perbaikan sistem CCTV pada armada mobil tangki.
+                    Melakukan inspeksi, pengujian, troubleshooting kamera,
+                    kabel, konektor, serta sistem kelistrikan kendaraan.
+                </p>
+
+                <div class="experience-tags">
+                    <span>CCTV</span>
+                    <span>Maintenance</span>
+                    <span>Troubleshooting</span>
+                    <span>Electrical</span>
                 </div>
 
             </div>
-
-
-            <div class="experience-timeline">
-
-
-                <!-- 01 - PT AYODYA -->
-
-                <div class="experience-item">
-
-                    <div class="experience-date">
-
-                        <span>May</span>
-                        <span>2026</span>
-
-                        <small>–</small>
-
-                        <span>Jul</span>
-                        <span>2026</span>
-
-                    </div>
-
-
-                    <div class="timeline-marker">
-
-                        <div class="timeline-dot"></div>
-
-                    </div>
-
-
-                    <div class="experience-content">
-
-                        <span class="experience-type">
-                            ELECTRONIC TECHNICIAN
-                        </span>
-
-                        <h3>
-                            PT Ayodya Dialog Semesta
-                        </h3>
-
-                        <h4>
-                            Electronic Technician
-                        </h4>
-
-                        <p>
-
-                            Performed installation, preventive
-                            maintenance, and repair of CCTV systems
-                            on tanker truck fleets. Conducted
-                            inspections, testing, and troubleshooting
-                            of cameras, cables, connectors, and
-                            vehicle electrical systems.
-
-                        </p>
-
-
-                        <div class="experience-tags">
-
-                            <span>CCTV</span>
-                            <span>Maintenance</span>
-                            <span>Troubleshooting</span>
-                            <span>Electrical</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- 02 - SSC WORKS -->
-
-                <div class="experience-item">
-
-                    <div class="experience-date">
-
-                        <span>Nov</span>
-                        <span>2025</span>
-
-                        <small>–</small>
-
-                        <span>May</span>
-                        <span>2026</span>
-
-                    </div>
-
-
-                    <div class="timeline-marker">
-
-                        <div class="timeline-dot"></div>
-
-                    </div>
-
-
-                    <div class="experience-content">
-
-                        <span class="experience-type">
-                            MAINTENANCE
-                        </span>
-
-                        <h3>
-                            SSC Works
-                        </h3>
-
-                        <h4>
-                            General Maintenance — Ministry Internship Program Batch 2
-                        </h4>
-
-                        <p>
-
-                            Performed preventive and corrective
-                            maintenance on electrical systems,
-                            machinery, CCTV systems, electrical
-                            panels, and workshop facilities.
-                            Conducted troubleshooting, periodic
-                            inspections, and supported electrical
-                            panel installation in accordance with
-                            SOPs and K3 safety standards.
-
-                        </p>
-
-
-                        <div class="experience-tags">
-
-                            <span>Preventive</span>
-                            <span>Corrective</span>
-                            <span>Electrical</span>
-                            <span>Maintenance</span>
-                            <span>K3</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- 03 - WIZZY PROJECT -->
-
-                <div class="experience-item">
-
-                    <div class="experience-date">
-
-                        <span>Jan</span>
-                        <span>2023</span>
-
-                        <small>–</small>
-
-                        <span>Present</span>
-
-                    </div>
-
-
-                    <div class="timeline-marker">
-
-                        <div class="timeline-dot"></div>
-
-                    </div>
-
-
-                    <div class="experience-content">
-
-                        <span class="experience-type">
-                            FREELANCE • EMBEDDED SYSTEM
-                        </span>
-
-                        <h3>
-                            Wizzy Project
-                        </h3>
-
-                        <h4>
-                            Embedded Systems & IoT
-                        </h4>
-
-                        <p>
-
-                            Designed and developed
-                            Internet of Things (IoT) systems,
-                            developed firmware, integrated
-                            hardware and software, built
-                            prototypes, and performed system
-                            testing and validation.
-
-                        </p>
-
-
-                        <div class="project-highlights">
-
-
-                            <div class="project-mini">
-
-                                <strong>
-                                    Hydroponic Monitoring
-                                </strong>
-
-                                <span>
-                                    IoT-based plant nutrient
-                                    monitoring using Fuzzy Logic.
-                                </span>
-
-                            </div>
-
-
-                            <div class="project-mini">
-
-                                <strong>
-                                    Smart Shrimp Pond
-                                </strong>
-
-                                <span>
-                                    IoT-based shrimp pond oxygen
-                                    control system powered by
-                                    photovoltaic energy.
-                                </span>
-
-                            </div>
-
-
-                            <div class="project-mini">
-
-                                <strong>
-                                    3-Phase Electrical Monitoring
-                                </strong>
-
-                                <span>
-                                    IoT-based three-phase electrical
-                                    monitoring using LoRa communication.
-                                </span>
-
-                            </div>
-
-
-                            <div class="project-mini">
-
-                                <strong>
-                                    Gas Leak Detector
-                                </strong>
-
-                                <span>
-                                    IoT-based gas leakage detection
-                                    and monitoring system.
-                                </span>
-
-                            </div>
-
-
-                            <div class="project-mini">
-
-                                <strong>
-                                    Physics Experiment System
-                                </strong>
-
-                                <span>
-                                    Free-fall and inclined-plane
-                                    experiment system using Arduino Uno.
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="experience-tags">
-
-                            <span>ESP32</span>
-                            <span>Arduino</span>
-                            <span>C/C++</span>
-                            <span>MQTT</span>
-                            <span>IoT</span>
-                            <span>Embedded System</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- 04 - AGRARIA -->
-
-                <div class="experience-item">
-
-                    <div class="experience-date">
-
-                        <span>Feb</span>
-                        <span>2024</span>
-
-                        <small>–</small>
-
-                        <span>Jun</span>
-                        <span>2024</span>
-
-                    </div>
-
-
-                    <div class="timeline-marker">
-
-                        <div class="timeline-dot"></div>
-
-                    </div>
-
-
-                    <div class="experience-content">
-
-                        <span class="experience-type">
-                            CERTIFIED INTERNSHIP
-                        </span>
-
-                        <h3>
-                            PT Agraria Indonesia Berdaya
-                        </h3>
-
-                        <h4>
-                            Certified Internship Program
-                        </h4>
-
-                        <p>
-
-                            Participated in sustainable land
-                            and environmental management projects,
-                            organic waste processing into compost,
-                            and the development and installation
-                            of aquaponic systems integrating
-                            fish and plant cultivation.
-
-                        </p>
-
-
-                        <div class="experience-tags">
-
-                            <span>Sustainability</span>
-                            <span>Aquaponics</span>
-                            <span>Project</span>
-                            <span>Teamwork</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- 05 - INDOBOT -->
-
-                <div class="experience-item">
-
-                    <div class="experience-date">
-
-                        <span>Feb</span>
-                        <span>2023</span>
-
-                        <small>–</small>
-
-                        <span>Jun</span>
-                        <span>2023</span>
-
-                    </div>
-
-
-                    <div class="timeline-marker">
-
-                        <div class="timeline-dot"></div>
-
-                    </div>
-
-
-                    <div class="experience-content">
-
-                        <span class="experience-type">
-                            IOT ENGINEER CAMP
-                        </span>
-
-                        <h3>
-                            Indobot Academy
-                        </h3>
-
-                        <h4>
-                            IoT Engineer
-                        </h4>
-
-                        <p>
-
-                            Developed Internet of Things systems
-                            through prototyping, sensor integration,
-                            microcontroller programming, and
-                            monitoring system development using
-                            the MQTT protocol.
-
-                        </p>
-
-
-                        <div class="experience-tags">
-
-                            <span>IoT</span>
-                            <span>MQTT</span>
-                            <span>Microcontroller</span>
-                            <span>Sensor</span>
-                            <span>C/C++</span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- 06 - SHARP -->
-
-                <div class="experience-item">
-
-                    <div class="experience-date">
-
-                        <span>Aug</span>
-                        <span>2019</span>
-
-                        <small>–</small>
-
-                        <span>Dec</span>
-                        <span>2019</span>
-
-                    </div>
-
-
-                    <div class="timeline-marker">
-
-                        <div class="timeline-dot"></div>
-
-                    </div>
-
-
-                    <div class="experience-content">
-
-                        <span class="experience-type">
-                            INTERNSHIP
-                        </span>
-
-                        <h3>
-                            PT Sharp Electronics
-                        </h3>
-
-                        <h4>
-                            Industrial Internship
-                        </h4>
-
-                        <p>
-
-                            Assisted with the maintenance and
-                            testing of electronic systems and
-                            household appliances. Performed
-                            troubleshooting and diagnostics to
-                            identify faults in electronic devices
-                            and supported quality control processes
-                            to ensure product reliability.
-
-                        </p>
-
-
-                        <div class="experience-tags">
-
-                            <span>Electronics</span>
-                            <span>Troubleshooting</span>
-                            <span>Quality Control</span>
-                            <span>Maintenance</span>
-
-                        </div>
-
-                    </div>
-
+        </div>
+
+
+        <!-- 02 - SSC WORKS -->
+        <div class="experience-item">
+
+            <div class="experience-date">
+                <span>Nov</span>
+                <span>2025</span>
+                <small>–</small>
+                <span>May</span>
+                <span>2026</span>
+            </div>
+
+            <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+                <span class="experience-type">
+                    MAINTENANCE
+                </span>
+
+                <h3>SSC Works</h3>
+
+                <h4>Maintenance Umum — Magang Kementerian Batch 2</h4>
+
+                <p>
+                    Melaksanakan preventive dan corrective maintenance
+                    pada sistem kelistrikan, mesin, CCTV, panel listrik,
+                    serta fasilitas workshop. Melakukan troubleshooting,
+                    inspeksi berkala, dan mendukung instalasi panel listrik
+                    sesuai SOP dan standar K3.
+                </p>
+
+                <div class="experience-tags">
+                    <span>Preventive</span>
+                    <span>Corrective</span>
+                    <span>Electrical</span>
+                    <span>Maintenance</span>
+                    <span>K3</span>
                 </div>
 
             </div>
+        </div>
 
-        </section>
 
+        <!-- 03 - WIZZY PROJECT -->
+        <div class="experience-item">
+
+            <div class="experience-date">
+                <span>Jan</span>
+                <span>2023</span>
+                <small>–</small>
+                <span>Present</span>
+            </div>
+
+            <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+                <span class="experience-type">
+                    FREELANCE • EMBEDDED SYSTEM
+                </span>
+
+                <h3>Wizzy Project</h3>
+
+                <h4>Embedded System & IoT</h4>
+
+                <p>
+                    Merancang dan mengembangkan sistem berbasis Internet
+                    of Things (IoT), mengembangkan firmware, melakukan
+                    integrasi hardware dan software, membuat prototype,
+                    serta melakukan pengujian dan validasi sistem.
+                </p>
+
+                <div class="project-highlights">
+
+                    <div class="project-mini">
+                        <strong>Hydroponic Monitoring</strong>
+                        <span>
+                            Monitoring nutrisi tanaman menggunakan
+                            Fuzzy Logic berbasis IoT.
+                        </span>
+                    </div>
+
+                    <div class="project-mini">
+                        <strong>Smart Shrimp Pond</strong>
+                        <span>
+                            Sistem kendali kadar oksigen tambak udang
+                            berbasis IoT dan photovoltaic.
+                        </span>
+                    </div>
+
+                    <div class="project-mini">
+                        <strong>3-Phase Electrical Monitoring</strong>
+                        <span>
+                            Monitoring listrik tiga fasa menggunakan
+                            LoRa berbasis IoT.
+                        </span>
+                    </div>
+
+                    <div class="project-mini">
+                        <strong>Gas Leak Detector</strong>
+                        <span>
+                            Sistem pendeteksi kebocoran gas berbasis IoT.
+                        </span>
+                    </div>
+
+                    <div class="project-mini">
+                        <strong>Physics Experiment System</strong>
+                        <span>
+                            Sistem gerak jatuh bebas dan bidang miring
+                            berbasis Arduino Uno.
+                        </span>
+                    </div>
+
+                </div>
+
+                <div class="experience-tags">
+                    <span>ESP32</span>
+                    <span>Arduino</span>
+                    <span>C/C++</span>
+                    <span>MQTT</span>
+                    <span>IoT</span>
+                    <span>Embedded System</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 04 - AGRARIA -->
+        <div class="experience-item">
+
+            <div class="experience-date">
+                <span>Feb</span>
+                <span>2024</span>
+                <small>–</small>
+                <span>Jun</span>
+                <span>2024</span>
+            </div>
+
+            <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+                <span class="experience-type">
+                    CERTIFIED INTERNSHIP
+                </span>
+
+                <h3>PT Agraria Indonesia Berdaya</h3>
+
+                <h4>Program Magang Bersertifikat</h4>
+
+                <p>
+                    Berpartisipasi dalam proyek pengelolaan lahan dan
+                    lingkungan berkelanjutan, pengolahan limbah organik
+                    menjadi kompos, serta pengembangan dan instalasi
+                    sistem akuaponik yang mengintegrasikan budidaya
+                    ikan dan tanaman.
+                </p>
+
+                <div class="experience-tags">
+                    <span>Sustainability</span>
+                    <span>Aquaponics</span>
+                    <span>Project</span>
+                    <span>Teamwork</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 05 - INDOBOT -->
+        <div class="experience-item">
+
+            <div class="experience-date">
+                <span>Feb</span>
+                <span>2023</span>
+                <small>–</small>
+                <span>Jun</span>
+                <span>2023</span>
+            </div>
+
+            <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+                <span class="experience-type">
+                    IOT ENGINEER CAMP
+                </span>
+
+                <h3>Indobot Academy</h3>
+
+                <h4>IoT Engineer</h4>
+
+                <p>
+                    Mengembangkan sistem Internet of Things melalui
+                    pembuatan prototype, integrasi sensor, pemrograman
+                    mikrokontroler, dan pengembangan sistem monitoring
+                    menggunakan protokol MQTT.
+                </p>
+
+                <div class="experience-tags">
+                    <span>IoT</span>
+                    <span>MQTT</span>
+                    <span>Microcontroller</span>
+                    <span>Sensor</span>
+                    <span>C/C++</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- 09 - SHARP -->
+        <div class="experience-item">
+
+            <div class="experience-date">
+                <span>Aug</span>
+                <span>2019</span>
+                <small>–</small>
+                <span>Dec</span>
+                <span>2019</span>
+            </div>
+
+            <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+                <span class="experience-type">
+                    INTERNSHIP
+                </span>
+
+                <h3>PT Sharp Electronics</h3>
+
+                <h4>Praktek Kerja Lapangan</h4>
+
+                <p>
+                    Membantu pemeliharaan dan pengujian sistem elektronik
+                    serta peralatan rumah tangga. Melakukan troubleshooting
+                    dan diagnostik untuk mengidentifikasi kerusakan pada
+                    perangkat elektronik serta mendukung proses kontrol
+                    kualitas untuk memastikan keandalan produk.
+                </p>
+
+                <div class="experience-tags">
+                    <span>Electronics</span>
+                    <span>Troubleshooting</span>
+                    <span>Quality Control</span>
+                    <span>Maintenance</span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
 
         <!-- ================= CAMPUS EXPERIENCE ================= -->
-
-        <section
-            class="section campus-experience-section"
-            id="campus-experience">
-
+        <section class="section campus-experience-section" id="campus-experience">
             <div class="container">
-
                 <div class="section-heading section-heading-row">
-
                     <div class="section-heading-left">
-
-                        <span class="section-number">
-                            04
-                        </span>
-
+                        <span class="section-number">04</span>
                         <div>
-
-                            <p class="section-label">
-                                CAMPUS EXPERIENCE
-                            </p>
-
-                            <h2>
-                                University &
-                                <span>Leadership.</span>
-                            </h2>
-
+                            <p class="section-label">CAMPUS EXPERIENCE</p>
+                            <h2>University & <span>Leadership.</span></h2>
                         </div>
-
                     </div>
-
-
                     <p class="section-description">
-
-                        Academic, organizational, and leadership
-                        experiences throughout my studies at
-                        Universitas Tadulako.
-
+                        Pengalaman akademik, organisasi, dan kepemimpinan selama menempuh pendidikan di Universitas Tadulako.
                     </p>
-
                 </div>
 
-
                 <div class="experience-timeline campus-timeline">
-
-
-                    <!-- LAB -->
-
-                    <div class="experience-item">
-
-                        <div class="experience-date">
-
-                            <span>2022</span>
-
-                            <small>–</small>
-
-                            <span>2023</span>
-
-                        </div>
-
-
-                        <div class="timeline-marker">
-
-                            <div class="timeline-dot"></div>
-
-                        </div>
-
-
-                        <div class="experience-content">
-
-                            <span class="experience-type">
-                                ACADEMIC EXPERIENCE
-                            </span>
-
-                            <h3>
-                                Microcontroller & Microprocessor Laboratory
-                            </h3>
-
-                            <h4>
-                                Laboratory Assistant
-                            </h4>
-
-                            <p>
-
-                                Assisted lecturers in conducting
-                                microcontroller and microprocessor
-                                laboratory sessions. Guided students
-                                in using microcontrollers and basic
-                                embedded system programming while
-                                supporting hardware testing and
-                                electronic circuit experiments.
-
-                            </p>
-
-
-                            <div class="experience-tags">
-
-                                <span>Microcontroller</span>
-                                <span>Embedded System</span>
-                                <span>Arduino</span>
-                                <span>Electronics</span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- ROBOTECH -->
-
-                    <div class="experience-item">
-
-                        <div class="experience-date">
-
-                            <span>2023</span>
-
-                        </div>
-
-
-                        <div class="timeline-marker">
-
-                            <div class="timeline-dot"></div>
-
-                        </div>
-
-
-                        <div class="experience-content">
-
-                            <span class="experience-type">
-                                LEADERSHIP
-                            </span>
-
-                            <h3>
-                                Robotech Tadulako
-                            </h3>
-
-                            <h4>
-                                President
-                            </h4>
-
-                            <p>
-
-                                Led and coordinated student robotics
-                                organization activities, including
-                                technical preparation and team
-                                management for national robotics
-                                competitions. Successfully led the
-                                Robotech Tadulako team to qualify
-                                and participate in a national robotics
-                                competition in Semarang in 2023.
-
-                            </p>
-
-
-                            <div class="experience-tags">
-
-                                <span>Leadership</span>
-                                <span>Robotics</span>
-                                <span>Team Management</span>
-                                <span>Competition</span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- HME -->
-
-                    <div class="experience-item">
-
-                        <div class="experience-date">
-
-                            <span>2024</span>
-
-                        </div>
-
-
-                        <div class="timeline-marker">
-
-                            <div class="timeline-dot"></div>
-
-                        </div>
-
-
-                        <div class="experience-content">
-
-                            <span class="experience-type">
-                                ORGANIZATION
-                            </span>
-
-                            <h3>
-                                Himpunan Mahasiswa Elektro
-                            </h3>
-
-                            <h4>
-                                Staff — Interest & Talent Division
-                            </h4>
-
-                            <p>
-
-                                Supported student interest and talent
-                                development activities and participated
-                                in planning, organizing, and coordinating
-                                student programs related to technology
-                                and competitions.
-
-                            </p>
-
-
-                            <div class="experience-tags">
-
-                                <span>Organization</span>
-                                <span>Teamwork</span>
-                                <span>Technology</span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
+            <!-- 01 - LAB -->
+        <div class="experience-item">
+
+            <div class="experience-date">
+                <span>2022</span>
+                <small>–</small>
+                <span>2023</span>
+            </div>
+
+            <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+                <span class="experience-type">
+                    ACADEMIC EXPERIENCE
+                </span>
+
+                <h3>Laboratorium Mikrokontroler & Mikroprosesor</h3>
+
+                <h4>Asisten Laboratorium</h4>
+
+                <p>
+                    Membantu dosen dalam pelaksanaan praktikum
+                    mikrokontroler dan mikroprosesor. Membimbing mahasiswa
+                    dalam penggunaan mikrokontroler dan pemrograman
+                    embedded system dasar serta membantu pengujian
+                    hardware dan rangkaian elektronika.
+                </p>
+
+                <div class="experience-tags">
+                    <span>Microcontroller</span>
+                    <span>Embedded System</span>
+                    <span>Arduino</span>
+                    <span>Electronics</span>
                 </div>
 
             </div>
+        </div>
 
+
+            <!-- 02 - ROBOTECH -->
+        <div class="experience-item">
+
+            <div class="experience-date">
+                <span>2023</span>
+            </div>
+
+            <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+                <span class="experience-type">
+                    LEADERSHIP
+                </span>
+
+                <h3>Robotech Tadulako</h3>
+
+                <h4>Ketua Umum</h4>
+
+                <p>
+                    Memimpin dan mengoordinasikan kegiatan organisasi
+                    robotika mahasiswa, termasuk persiapan teknis dan
+                    manajemen tim dalam kompetisi robotika tingkat nasional.
+                    Berhasil membawa tim Robotech Tadulako lolos dan
+                    berpartisipasi dalam kompetisi robotika nasional
+                    di Semarang pada 2023.
+                </p>
+
+                <div class="experience-tags">
+                    <span>Leadership</span>
+                    <span>Robotics</span>
+                    <span>Team Management</span>
+                    <span>Competition</span>
+                </div>
+
+            </div>
+        </div>
+
+
+            <!-- 03 - STAFF -->
+        <div class="experience-item">
+
+            <div class="experience-date">
+                <span>2024</span>
+            </div>
+
+            <div class="timeline-marker">
+                <div class="timeline-dot"></div>
+            </div>
+
+            <div class="experience-content">
+
+                <span class="experience-type">
+                    ORGANIZATION
+                </span>
+
+                <h3>Robotech Tadulako</h3>
+
+                <h4>Staff Divisi Minat & Bakat</h4>
+
+                <p>
+                    Mendukung penyelenggaraan kegiatan pengembangan
+                    minat dan bakat mahasiswa serta berpartisipasi
+                    dalam perencanaan, pelaksanaan, dan koordinasi
+                    kegiatan mahasiswa di bidang teknologi dan kompetisi.
+                </p>
+
+                <div class="experience-tags">
+                    <span>Organization</span>
+                    <span>Teamwork</span>
+                    <span>Technology</span>
+                </div>
+
+            </div>
+        </div>
+
+
+                </div>
+            </div>
         </section>
-
 
         <!-- ================= PROJECTS ================= -->
 
-        <section
-            class="section projects-section"
-            id="projects">
+        <section class="section projects-section" id="projects">
 
             <div class="container">
 
@@ -1196,9 +932,9 @@
 
                     <p class="section-description">
 
-                        Selected Embedded Systems, IoT, Robotics,
-                        and Electrical Engineering projects that
-                        I have developed.
+                        Beberapa proyek Embedded System,
+                        IoT, Robotics dan Electrical Engineering
+                        yang pernah saya kembangkan.
 
                     </p>
 
@@ -1212,13 +948,10 @@
 
                     <article class="project-card">
 
-                        <div class="project-image project-iot">
-
-                            <img
-                                src="project/hidroponi.jpeg"
-                                alt="Hydroponic Nutrient Monitoring">
-
-                        </div>
+ <div class="project-image project-iot">
+    <img src="project/hidroponi.jpeg"
+         alt="Hydroponic Nutrient Monitoring">
+</div>
 
 
                         <div class="project-content">
@@ -1233,19 +966,31 @@
 
                             <p>
 
-                                IoT-based monitoring and control
-                                system for hydroponic plant nutrients
-                                using the Fuzzy Logic method.
+                                Sistem monitoring dan kontrol
+                                nutrisi tanaman hidroponik
+                                menggunakan metode Fuzzy Logic
+                                berbasis Internet of Things.
 
                             </p>
 
 
                             <div class="project-tech">
 
-                                <span>IoT</span>
-                                <span>Fuzzy Logic</span>
-                                <span>Sensor</span>
-                                <span>Microcontroller</span>
+                                <span>
+                                    IoT
+                                </span>
+
+                                <span>
+                                    Fuzzy Logic
+                                </span>
+
+                                <span>
+                                    Sensor
+                                </span>
+
+                                <span>
+                                    Microcontroller
+                                </span>
 
                             </div>
 
@@ -1269,9 +1014,7 @@
 
                         <div class="project-image project-water">
 
-                            <img
-                                src="project/smart oxygen.jpg"
-                                alt="Smart Oxygen Control">
+                            <img src="project/smart oxygen.jpg" alt="Smart Oxygen Control">
 
                             <span class="project-number">
                                 02
@@ -1292,19 +1035,30 @@
 
                             <p>
 
-                                IoT-based oxygen level control
-                                system for shrimp ponds powered
-                                by photovoltaic energy.
+                                Sistem kendali kadar oksigen
+                                pada tambak udang dengan sumber
+                                energi fotovoltaik berbasis IoT.
 
                             </p>
 
 
                             <div class="project-tech">
 
-                                <span>IoT</span>
-                                <span>Solar PV</span>
-                                <span>Sensor</span>
-                                <span>Control</span>
+                                <span>
+                                    IoT
+                                </span>
+
+                                <span>
+                                    Solar PV
+                                </span>
+
+                                <span>
+                                    Sensor
+                                </span>
+
+                                <span>
+                                    Control
+                                </span>
 
                             </div>
 
@@ -1328,9 +1082,7 @@
 
                         <div class="project-image project-electric">
 
-                            <img
-                                src="project/3phase.jpeg"
-                                alt="3-Phase Electrical Monitoring">
+                            <img src="project/3phase.jpeg" alt="3-Phase Electrical Monitoring">
 
                             <span class="project-number">
                                 03
@@ -1351,19 +1103,30 @@
 
                             <p>
 
-                                IoT-based monitoring system for
-                                three-phase electrical parameters
-                                using LoRa communication.
+                                Sistem monitoring parameter
+                                listrik tiga fasa menggunakan
+                                komunikasi LoRa berbasis IoT.
 
                             </p>
 
 
                             <div class="project-tech">
 
-                                <span>3-Phase</span>
-                                <span>LoRa</span>
-                                <span>IoT</span>
-                                <span>Monitoring</span>
+                                <span>
+                                    3-Phase
+                                </span>
+
+                                <span>
+                                    LoRa
+                                </span>
+
+                                <span>
+                                    IoT
+                                </span>
+
+                                <span>
+                                    Monitoring
+                                </span>
 
                             </div>
 
@@ -1387,9 +1150,7 @@
 
                         <div class="project-image project-robot">
 
-                            <img
-                                src="project/linetracer.jpeg"
-                                alt="Line Tracer QR Code">
+                            <img src="project/linetracer.jpeg" alt="Line Tracer QR Code">
 
                             <span class="project-number">
                                 04
@@ -1410,20 +1171,31 @@
 
                             <p>
 
-                                Line-tracing robot designed for
-                                object sorting using QR Code
-                                identification to determine
-                                target destinations.
+                                Robot line tracer untuk
+                                penyortiran barang dengan
+                                QR Code sebagai sistem
+                                identifikasi target.
 
                             </p>
 
 
                             <div class="project-tech">
 
-                                <span>Arduino</span>
-                                <span>C++</span>
-                                <span>QR Code</span>
-                                <span>Robotics</span>
+                                <span>
+                                    Arduino
+                                </span>
+
+                                <span>
+                                    C++
+                                </span>
+
+                                <span>
+                                    QR Code
+                                </span>
+
+                                <span>
+                                    Robotics
+                                </span>
 
                             </div>
 
@@ -1447,9 +1219,7 @@
 
                         <div class="project-image project-safety">
 
-                            <img
-                                src="project/gas.jpg"
-                                alt="Gas Leak Detector">
+                            <img src="project/gas.jpg" alt="Gas Leak Detector">
 
                             <span class="project-number">
                                 05
@@ -1470,18 +1240,27 @@
 
                             <p>
 
-                                IoT-based gas leakage detection
-                                system designed to support
-                                real-time condition monitoring.
+                                Sistem pendeteksi kebocoran gas
+                                berbasis IoT untuk membantu
+                                monitoring kondisi secara
+                                real-time.
 
                             </p>
 
 
                             <div class="project-tech">
 
-                                <span>IoT</span>
-                                <span>Gas Sensor</span>
-                                <span>Microcontroller</span>
+                                <span>
+                                    IoT
+                                </span>
+
+                                <span>
+                                    Gas Sensor
+                                </span>
+
+                                <span>
+                                    Microcontroller
+                                </span>
 
                             </div>
 
@@ -1505,9 +1284,7 @@
 
                         <div class="project-image project-physics">
 
-                            <img
-                                src="project/gerak jatuh benda.jpg"
-                                alt="Physics Experiment System">
+                            <img src="project/gerak jatuh benda.jpg" alt="Gerak Jatuh Bebas">
 
                             <span class="project-number">
                                 06
@@ -1528,18 +1305,26 @@
 
                             <p>
 
-                                Experimental system for studying
-                                free-fall motion and inclined-plane
-                                motion using Arduino Uno.
+                                Sistem eksperimen Gerak Jatuh
+                                Bebas dan Bidang Miring
+                                menggunakan Arduino Uno.
 
                             </p>
 
 
                             <div class="project-tech">
 
-                                <span>Arduino Uno</span>
-                                <span>Sensor</span>
-                                <span>Embedded</span>
+                                <span>
+                                    Arduino Uno
+                                </span>
+
+                                <span>
+                                    Sensor
+                                </span>
+
+                                <span>
+                                    Embedded
+                                </span>
 
                             </div>
 
@@ -1565,55 +1350,29 @@
 
         <!-- ================= GALLERY ================= -->
 
-        <section
-            class="section gallery-section"
-            id="gallery">
+        <section class="section gallery-section" id="gallery">
 
             <div class="container">
 
                 <div class="section-heading">
-
-                    <span class="section-number">
-                        06
-                    </span>
+                    <span class="section-number">06</span>
 
                     <div>
+                        <p class="section-label">GALLERY</p>
 
-                        <p class="section-label">
-                            GALLERY
-                        </p>
-
-                        <h2>
-                            Professional
-                            <span>Moments.</span>
-                        </h2>
-
+                        <h2>Professional <span>Moments.</span></h2>
                     </div>
-
                 </div>
-
 
                 <div class="gallery-intro">
-
                     <p>
-
-                        Documentation of activities,
-                        fieldwork, engineering projects,
-                        and professional experiences
-                        throughout my career journey.
-
+                        Dokumentasi aktivitas, pekerjaan lapangan, dan pengalaman engineering
+                        yang menjadi bagian dari perjalanan profesional saya.
                     </p>
-
                 </div>
 
-
-                <div
-                    class="gallery-grid"
-                    id="activityGallery">
-
-                    <!-- Photos are loaded automatically
-                         from the "foto activity" folder. -->
-
+                <div class="gallery-grid" id="activityGallery">
+                    <!-- Foto akan diambil otomatis dari folder "foto activity". -->
                 </div>
 
             </div>
@@ -1623,9 +1382,7 @@
 
         <!-- ================= SKILLS ================= -->
 
-        <section
-            class="section skills-section"
-            id="skills">
+        <section class="section skills-section" id="skills">
 
             <div class="container">
 
@@ -1654,28 +1411,23 @@
                 <div class="skills-grid">
 
 
-                    <!-- EMBEDDED -->
-
                     <div class="skill-card">
 
                         <div class="skill-icon">
-
                             <i class="fa-solid fa-microchip"></i>
-
                         </div>
 
                         <h3>
-                            Embedded Systems
+                            Embedded System
                         </h3>
 
                         <p>
 
-                            Development of microcontroller-based
-                            systems and hardware-software
-                            integration.
+                            Pengembangan sistem berbasis
+                            mikrokontroler dan integrasi
+                            hardware-software.
 
                         </p>
-
 
                         <div class="skill-tags">
 
@@ -1690,14 +1442,10 @@
                     </div>
 
 
-                    <!-- IOT -->
-
                     <div class="skill-card">
 
                         <div class="skill-icon">
-
                             <i class="fa-solid fa-wifi"></i>
-
                         </div>
 
                         <h3>
@@ -1706,12 +1454,11 @@
 
                         <p>
 
-                            Development of monitoring systems,
-                            device communication, and sensor
-                            integration using IoT technologies.
+                            Pengembangan sistem monitoring,
+                            komunikasi perangkat dan integrasi
+                            sensor berbasis IoT.
 
                         </p>
-
 
                         <div class="skill-tags">
 
@@ -1725,14 +1472,10 @@
                     </div>
 
 
-                    <!-- MAINTENANCE -->
-
                     <div class="skill-card">
 
                         <div class="skill-icon">
-
                             <i class="fa-solid fa-screwdriver-wrench"></i>
-
                         </div>
 
                         <h3>
@@ -1742,11 +1485,10 @@
                         <p>
 
                             Preventive maintenance, corrective
-                            maintenance, inspection, and
+                            maintenance, inspeksi dan
                             troubleshooting.
 
                         </p>
-
 
                         <div class="skill-tags">
 
@@ -1760,14 +1502,10 @@
                     </div>
 
 
-                    <!-- INSTRUMENTATION -->
-
                     <div class="skill-card">
 
                         <div class="skill-icon">
-
                             <i class="fa-solid fa-gauge-high"></i>
-
                         </div>
 
                         <h3>
@@ -1776,12 +1514,11 @@
 
                         <p>
 
-                            Instrumentation, measurement,
-                            basic control systems, and
-                            electrical measuring instruments.
+                            Instrumentasi, pengukuran,
+                            sistem kontrol dasar dan
+                            penggunaan alat ukur listrik.
 
                         </p>
-
 
                         <div class="skill-tags">
 
@@ -1794,14 +1531,10 @@
                     </div>
 
 
-                    <!-- ELECTRICAL -->
-
                     <div class="skill-card">
 
                         <div class="skill-icon">
-
                             <i class="fa-solid fa-bolt"></i>
-
                         </div>
 
                         <h3>
@@ -1810,12 +1543,11 @@
 
                         <p>
 
-                            Electrical systems, electronics,
-                            electrical panels, and
-                            troubleshooting fundamentals.
+                            Dasar sistem kelistrikan,
+                            elektronika, panel dan
+                            troubleshooting.
 
                         </p>
-
 
                         <div class="skill-tags">
 
@@ -1829,14 +1561,10 @@
                     </div>
 
 
-                    <!-- PROGRAMMING -->
-
                     <div class="skill-card">
 
                         <div class="skill-icon">
-
                             <i class="fa-solid fa-code"></i>
-
                         </div>
 
                         <h3>
@@ -1845,12 +1573,11 @@
 
                         <p>
 
-                            Microcontroller programming and
-                            firmware development for embedded
-                            systems.
+                            Pemrograman mikrokontroler
+                            dan pengembangan firmware
+                            untuk sistem embedded.
 
                         </p>
-
 
                         <div class="skill-tags">
 
@@ -1863,14 +1590,10 @@
                     </div>
 
 
-                    <!-- ENGINEERING TOOLS -->
-
                     <div class="skill-card">
 
                         <div class="skill-icon">
-
                             <i class="fa-solid fa-drafting-compass"></i>
-
                         </div>
 
                         <h3>
@@ -1879,12 +1602,10 @@
 
                         <p>
 
-                            Electronic circuit design and
-                            engineering tools for system
-                            development and simulation.
+                            Perancangan rangkaian elektronika
+                            serta penggunaan tools engineering.
 
                         </p>
-
 
                         <div class="skill-tags">
 
@@ -1897,14 +1618,10 @@
                     </div>
 
 
-                    <!-- SOFT SKILLS -->
-
                     <div class="skill-card">
 
                         <div class="skill-icon">
-
                             <i class="fa-solid fa-people-group"></i>
-
                         </div>
 
                         <h3>
@@ -1914,11 +1631,10 @@
                         <p>
 
                             Problem solving, analytical thinking,
-                            teamwork, communication, time
-                            management, and adaptability.
+                            teamwork, communication,
+                            time management dan adaptability.
 
                         </p>
-
 
                         <div class="skill-tags">
 
@@ -1940,16 +1656,14 @@
 
         <!-- ================= ACHIEVEMENTS ================= -->
 
-        <section
-            class="section"
-            id="achievements">
+        <section class="section" id="achievements">
 
             <div class="container">
 
                 <div class="section-heading">
 
                     <span class="section-number">
-                        08
+                        05
                     </span>
 
                     <div>
@@ -1978,21 +1692,17 @@
                         </div>
 
                         <div class="achievement-icon">
-
                             <i class="fa-solid fa-trophy"></i>
-
                         </div>
 
                         <h3>
-                            2nd Place
+                            Juara 2
                         </h3>
 
                         <p>
-
-                            Appropriate Technology Innovation
-                            Competition based on Automation
-                            at the Central Sulawesi level.
-
+                            Lomba Inovasi Teknologi Tepat Guna
+                            Berbasis Otomasi tingkat
+                            Sulawesi Tengah.
                         </p>
 
                     </div>
@@ -2005,21 +1715,16 @@
                         </div>
 
                         <div class="achievement-icon">
-
                             <i class="fa-solid fa-robot"></i>
-
                         </div>
 
                         <h3>
-                            Indonesian Robot Contest
+                            Kontes Robot Indonesia
                         </h3>
 
                         <p>
-
-                            Team Leader of a Wheeled Soccer
-                            Robot team in the Indonesian
-                            Robot Contest.
-
+                            Ketua Tim Robot Sepak Bola Beroda
+                            dalam Kontes Robot Indonesia.
                         </p>
 
                     </div>
@@ -2032,20 +1737,16 @@
                         </div>
 
                         <div class="achievement-icon">
-
                             <i class="fa-solid fa-medal"></i>
-
                         </div>
 
                         <h3>
-                            1st Place
+                            Juara 1
                         </h3>
 
                         <p>
-
-                            1st Place in the university-level
-                            Palu Robot Contest.
-
+                            Juara 1 Tingkat Mahasiswa
+                            pada Palu Robot Contest.
                         </p>
 
                     </div>
@@ -2058,204 +1759,107 @@
 
 
         <!-- ================= CERTIFICATIONS ================= -->
-
-        <section
-            class="section certification-section">
-
+        <section class="section certification-section" id="certifications">
             <div class="container">
-
                 <div class="section-heading">
-
-                    <span class="section-number">
-                        09
-                    </span>
-
+                    <span class="section-number">08</span>
                     <div>
-
-                        <p class="section-label">
-                            CERTIFICATIONS
-                        </p>
-
-                        <h2>
-                            Training &
-                            <span>Certification.</span>
-                        </h2>
-
+                        <p class="section-label">CERTIFICATIONS</p>
+                        <h2>Training & <span>Certification.</span></h2>
                     </div>
-
                 </div>
 
+                <div class="certification-intro">
+                    <p>
+                        Professional certifications, training programs, and technical qualifications
+                        supporting my engineering expertise.
+                    </p>
+                </div>
 
                 <div class="certification-grid">
-
-
-                    <div class="certification-card">
-
-                        <div class="cert-icon">
-
-                            <i class="fa-solid fa-shield-halved"></i>
-
+                    <article class="certification-card">
+                        <button class="certificate-image" type="button" data-certificate="sertifikat/skk-k3.jpg">
+                            <img src="sertifikat/skk-k3.jpg" alt="SKK Ahli Muda K3 Konstruksi" loading="lazy">
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                        </button>
+                        <div class="certification-content">
+                            <div class="certification-meta"><span>2026</span><i class="fa-solid fa-shield-halved"></i></div>
+                            <h3>SKK Ahli Muda K3 Konstruksi</h3>
+                            <p>Fresh Graduate</p>
                         </div>
+                    </article>
 
-                        <div>
-
-                            <span>
-                                2026
-                            </span>
-
-                            <h3>
-                                SKK Ahli Muda K3 Konstruksi
-                            </h3>
-
-                            <p>
-                                Fresh Graduate
-                            </p>
-
+                    <article class="certification-card">
+                        <button class="certificate-image" type="button" data-certificate="sertifikat/iot-msib.jpg">
+                            <img src="sertifikat/iot-msib.jpg" alt="IoT Engineer MSIB Certificate" loading="lazy">
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                        </button>
+                        <div class="certification-content">
+                            <div class="certification-meta"><span>2023</span><i class="fa-solid fa-wifi"></i></div>
+                            <h3>IoT Engineer Camp</h3>
+                            <p>Indobot Academy — MSIB 3</p>
                         </div>
+                    </article>
 
-                    </div>
-
-
-                    <div class="certification-card">
-
-                        <div class="cert-icon">
-
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-
+                    <article class="certification-card">
+                        <button class="certificate-image" type="button" data-certificate="sertifikat/python.jpg">
+                            <img src="sertifikat/python.jpg" alt="Python Programming Certificate" loading="lazy">
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                        </button>
+                        <div class="certification-content">
+                            <div class="certification-meta"><span>2026</span><i class="fa-solid fa-code"></i></div>
+                            <h3>Memulai Pemrograman dengan Python</h3>
+                            <p>Dicoding Indonesia</p>
                         </div>
+                    </article>
 
-                        <div>
-
-                            <span>
-                                2026
-                            </span>
-
-                            <h3>
-                                Ministry Internship Program
-                            </h3>
-
-                            <p>
-                                Maintenance — Batch 2
-                            </p>
-
+                    <article class="certification-card">
+                        <button class="certificate-image" type="button" data-certificate="sertifikat/maintenance.jpg">
+                            <img src="sertifikat/maintenance.jpg" alt="Maintenance Certificate" loading="lazy">
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                        </button>
+                        <div class="certification-content">
+                            <div class="certification-meta"><span>2026</span><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                            <h3>Program Magang Kementerian</h3>
+                            <p>Maintenance — Batch 2</p>
                         </div>
+                    </article>
 
-                    </div>
-
-
-                    <div class="certification-card">
-
-                        <div class="cert-icon">
-
-                            <i class="fa-solid fa-code"></i>
-
+                    <article class="certification-card">
+                        <button class="certificate-image" type="button" data-certificate="sertifikat/amati.jpg">
+                            <img src="sertifikat/amati.jpg" alt="AMATI Certificate" loading="lazy">
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                        </button>
+                        <div class="certification-content">
+                            <div class="certification-meta"><span>2024</span><i class="fa-solid fa-trophy"></i></div>
+                            <h3>Program Magang Bersertifikat</h3>
+                            <p>Wallacea Project / AMATI</p>
                         </div>
+                    </article>
 
-                        <div>
-
-                            <span>
-                                2026
-                            </span>
-
-                            <h3>
-                                Python Programming Fundamentals
-                            </h3>
-
-                            <p>
-                                Dicoding Indonesia
-                            </p>
-
+                    <article class="certification-card">
+                        <button class="certificate-image" type="button" data-certificate="sertifikat/sharp.jpg">
+                            <img src="sertifikat/sharp.jpg" alt="PT Sharp Indonesia Certificate" loading="lazy">
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                        </button>
+                        <div class="certification-content">
+                            <div class="certification-meta"><span>2020</span><i class="fa-solid fa-tv"></i></div>
+                            <h3>Pelatihan Audio Video</h3>
+                            <p>PT Sharp Indonesia</p>
                         </div>
-
-                    </div>
-
-
-                    <div class="certification-card">
-
-                        <div class="cert-icon">
-
-                            <i class="fa-solid fa-leaf"></i>
-
-                        </div>
-
-                        <div>
-
-                            <span>
-                                2024
-                            </span>
-
-                            <h3>
-                                Certified Internship Program
-                            </h3>
-
-                            <p>
-                                Wallacea Project
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="certification-card">
-
-                        <div class="cert-icon">
-
-                            <i class="fa-solid fa-wifi"></i>
-
-                        </div>
-
-                        <div>
-
-                            <span>
-                                2023
-                            </span>
-
-                            <h3>
-                                IoT Engineer Camp
-                            </h3>
-
-                            <p>
-                                Indobot Academy
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="certification-card">
-
-                        <div class="cert-icon">
-
-                            <i class="fa-solid fa-tv"></i>
-
-                        </div>
-
-                        <div>
-
-                            <span>
-                                2020
-                            </span>
-
-                            <h3>
-                                Audio Video Training
-                            </h3>
-
-                            <p>
-                                PT Sharp Indonesia
-                            </p>
-
-                        </div>
-
-                    </div>
-
+                    </article>
                 </div>
-
             </div>
 
+            <div class="certificate-lightbox" id="certificateLightbox" aria-hidden="true">
+                <button class="certificate-lightbox-close" id="certificateLightboxClose" type="button" aria-label="Close certificate">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <div class="certificate-lightbox-content">
+                    <img id="certificateLightboxImage" src="" alt="Certificate Preview">
+                </div>
+            </div>
         </section>
-
 
         <!-- ================= CTA ================= -->
 
@@ -2279,17 +1883,13 @@
                         </h2>
 
                         <p>
-
-                            Open to job opportunities,
-                            engineering projects,
-                            and technology collaborations.
-
+                            Terbuka untuk peluang kerja,
+                            project engineering, dan
+                            kolaborasi di bidang teknologi.
                         </p>
 
 
-                        <a
-                            href="#contact"
-                            class="btn btn-primary">
+                        <a href="#contact" class="btn btn-primary">
 
                             Contact Me
 
@@ -2308,16 +1908,14 @@
 
         <!-- ================= CONTACT ================= -->
 
-        <section
-            class="section contact-section"
-            id="contact">
+        <section class="section contact-section" id="contact">
 
             <div class="container">
 
                 <div class="section-heading">
 
                     <span class="section-number">
-                        10
+                        07
                     </span>
 
                     <div>
@@ -2343,14 +1941,12 @@
 
                         <p>
 
-                            I am open to job opportunities,
-                            engineering projects, collaborations,
-                            and discussions related to technology.
+                            Saya terbuka untuk peluang kerja,
+                            project engineering, kolaborasi,
+                            maupun diskusi mengenai teknologi.
 
                         </p>
 
-
-                        <!-- EMAIL -->
 
                         <div class="contact-item">
 
@@ -2366,8 +1962,7 @@
                                     Email
                                 </span>
 
-                                <a
-                                    href="mailto:wisnurahmatdwiputra@gmail.com">
+                                <a href="mailto:wisnurahmatdwiputra@gmail.com">
 
                                     wisnurahmatdwiputra@gmail.com
 
@@ -2377,8 +1972,6 @@
 
                         </div>
 
-
-                        <!-- PHONE -->
 
                         <div class="contact-item">
 
@@ -2403,8 +1996,6 @@
                         </div>
 
 
-                        <!-- LOCATION -->
-
                         <div class="contact-item">
 
                             <div class="contact-icon">
@@ -2420,15 +2011,13 @@
                                 </span>
 
                                 <strong>
-                                    Palu, Central Sulawesi
+                                    Palu, Sulawesi Tengah
                                 </strong>
 
                             </div>
 
                         </div>
 
-
-                        <!-- LINKEDIN -->
 
                         <div class="contact-item">
 
@@ -2456,8 +2045,6 @@
 
                         </div>
 
-
-                        <!-- GITHUB -->
 
                         <div class="contact-item">
 
@@ -2488,12 +2075,11 @@
                     </div>
 
 
-                    <!-- CONTACT FORM -->
+                    <!-- FORM -->
 
                     <form
                         class="contact-form"
                         id="contactForm">
-
 
                         <div class="form-row">
 
@@ -2589,17 +2175,13 @@
 
 
             <div class="footer-logo">
-
                 WR<span>.</span>
-
             </div>
 
 
             <p>
-
                 © 2026 Wisnu Rahmat Dwi Putra.
                 Electrical Engineer.
-
             </p>
 
 
@@ -2733,14 +2315,12 @@
 
         /* ================= ACTIVITY GALLERY ================= */
 
-        const activityGallery =
-            document.getElementById("activityGallery");
+        const activityGallery = document.getElementById("activityGallery");
 
-
+        // Foto yang memang ada di folder: foto activity
         const activityPhotos = [
-
- {
-        src: "foto%20activity/electrical-maintenance.jpg",
+            {
+ src: "foto%20activity/electrical-maintenance.jpg",
         title: "Electrical Maintenance"
     },
     {
@@ -2778,199 +2358,111 @@
 ];
 
         function createGalleryItem(photo, index) {
+            const item = document.createElement("button");
+            item.className = "gallery-item";
+            item.type = "button";
+            item.dataset.gallery = photo.src;
 
-            const item =
-                document.createElement("button");
-
-            item.className =
-                "gallery-item";
-
-            item.type =
-                "button";
-
-            item.dataset.gallery =
-                photo.src;
-
-
-            const img =
-                document.createElement("img");
-
-            img.src =
-                photo.src;
-
-            img.alt =
-                photo.title;
-
-            img.loading =
-                "lazy";
-
+            const img = document.createElement("img");
+            img.src = photo.src;
+            img.alt = photo.title;
+            img.loading = "lazy";
 
             img.onerror = () => {
-                console.error("Gallery image gagal dimuat:", photo.src);
+                item.style.display = "none";
             };
 
-
-            const overlay =
-                document.createElement("span");
-
-            overlay.className =
-                "gallery-overlay";
-
-
-            overlay.innerHTML = `
-
-                <span>
-                    ${photo.title}
-                </span>
-
-                <i class="fa-solid fa-expand"></i>
-
-            `;
-
+            const overlay = document.createElement("span");
+            overlay.className = "gallery-overlay";
+            overlay.innerHTML = `<span>${photo.title}</span><i class="fa-solid fa-expand"></i>`;
 
             item.appendChild(img);
-
             item.appendChild(overlay);
-
             activityGallery.appendChild(item);
-
         }
 
-
-        activityPhotos.forEach(
-            createGalleryItem
-        );
-
-
-        /* ================= GALLERY LIGHTBOX ================= */
+        activityPhotos.forEach(createGalleryItem);
 
         function initGalleryLightbox() {
+            const galleryItems = document.querySelectorAll("#activityGallery [data-gallery]");
 
-            const galleryItems =
-                document.querySelectorAll(
-                    "#activityGallery [data-gallery]"
-                );
-
-
-            const lightbox =
-                document.createElement("div");
-
-            lightbox.className =
-                "gallery-lightbox";
-
-
+            const lightbox = document.createElement("div");
+            lightbox.className = "gallery-lightbox";
             lightbox.innerHTML = `
-
-                <button
-                    class="gallery-lightbox-close"
-                    type="button"
-                    aria-label="Close image">
-
+                <button class="gallery-lightbox-close" type="button" aria-label="Close image">
                     <i class="fa-solid fa-xmark"></i>
-
                 </button>
-
-                <img
-                    src=""
-                    alt="Gallery preview">
-
+                <img src="" alt="Gallery preview">
             `;
+            document.body.appendChild(lightbox);
 
-
-            document.body.appendChild(
-                lightbox
-            );
-
-
-            const lightboxImage =
-                lightbox.querySelector("img");
-
+            const lightboxImage = lightbox.querySelector("img");
 
             galleryItems.forEach(item => {
-
-                item.addEventListener(
-                    "click",
-                    () => {
-
-                        lightboxImage.src =
-                            item.dataset.gallery;
-
-                        lightbox.classList.add(
-                            "show"
-                        );
-
-                        document.body.classList.add(
-                            "gallery-open"
-                        );
-
-                    }
-                );
-
+                item.addEventListener("click", () => {
+                    lightboxImage.src = item.dataset.gallery;
+                    lightbox.classList.add("show");
+                    document.body.classList.add("gallery-open");
+                });
             });
 
-
             function closeGallery() {
-
-                lightbox.classList.remove(
-                    "show"
-                );
-
-                document.body.classList.remove(
-                    "gallery-open"
-                );
-
-                lightboxImage.src =
-                    "";
-
+                lightbox.classList.remove("show");
+                document.body.classList.remove("gallery-open");
+                lightboxImage.src = "";
             }
 
-
-            lightbox.addEventListener(
-                "click",
-                event => {
-
-                    if (
-                        event.target === lightbox ||
-                        event.target.closest(
-                            ".gallery-lightbox-close"
-                        )
-                    ) {
-
-                        closeGallery();
-
-                    }
-
+            lightbox.addEventListener("click", event => {
+                if (event.target === lightbox || event.target.closest(".gallery-lightbox-close")) {
+                    closeGallery();
                 }
-            );
+            });
 
-
-            document.addEventListener(
-                "keydown",
-                event => {
-
-                    if (
-                        event.key === "Escape"
-                    ) {
-
-                        closeGallery();
-
-                    }
-
-                }
-            );
-
+            document.addEventListener("keydown", event => {
+                if (event.key === "Escape") closeGallery();
+            });
         }
-
 
         initGalleryLightbox();
 
 
+        /* ================= CERTIFICATE LIGHTBOX ================= */
+        const certificateItems = document.querySelectorAll(".certificate-image");
+        const certificateLightbox = document.getElementById("certificateLightbox");
+        const certificateLightboxImage = document.getElementById("certificateLightboxImage");
+        const certificateLightboxClose = document.getElementById("certificateLightboxClose");
+
+        certificateItems.forEach(item => {
+            item.addEventListener("click", () => {
+                const image = item.dataset.certificate;
+                certificateLightboxImage.src = image;
+                certificateLightbox.classList.add("show");
+                certificateLightbox.setAttribute("aria-hidden", "false");
+                document.body.classList.add("gallery-open");
+            });
+        });
+
+        function closeCertificateLightbox() {
+            certificateLightbox.classList.remove("show");
+            certificateLightbox.setAttribute("aria-hidden", "true");
+            certificateLightboxImage.src = "";
+            document.body.classList.remove("gallery-open");
+        }
+
+        certificateLightboxClose.addEventListener("click", closeCertificateLightbox);
+        certificateLightbox.addEventListener("click", event => {
+            if (event.target === certificateLightbox) closeCertificateLightbox();
+        });
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape" && certificateLightbox.classList.contains("show")) {
+                closeCertificateLightbox();
+            }
+        });
+
         /* ================= CONTACT FORM ================= */
 
         const contactForm =
-            document.getElementById(
-                "contactForm"
-            );
+            document.getElementById("contactForm");
 
 
         contactForm.addEventListener(
@@ -2981,32 +2473,20 @@
 
 
                 const name =
-                    document.getElementById(
-                        "name"
-                    ).value;
-
+                    document.getElementById("name").value;
 
                 const email =
-                    document.getElementById(
-                        "email"
-                    ).value;
-
+                    document.getElementById("email").value;
 
                 const subject =
-                    document.getElementById(
-                        "subject"
-                    ).value;
-
+                    document.getElementById("subject").value;
 
                 const message =
-                    document.getElementById(
-                        "message"
-                    ).value;
+                    document.getElementById("message").value;
 
 
                 const whatsappMessage =
-
-                    `Hello Wisnu, my name is ${name}.
+                    `Halo Wisnu, saya ${name}.
 
 Email: ${email}
 
@@ -3016,11 +2496,8 @@ ${message}`;
 
 
                 const whatsappURL =
-
                     "https://wa.me/6282192549690?text=" +
-                    encodeURIComponent(
-                        whatsappMessage
-                    );
+                    encodeURIComponent(whatsappMessage);
 
 
                 window.open(
@@ -3036,26 +2513,17 @@ ${message}`;
 
         const revealElements =
             document.querySelectorAll(
-
-                ".project-card, " +
-                ".skill-card, " +
-                ".achievement-card, " +
-                ".certification-card, " +
-                ".experience-item"
-
+                ".project-card, .skill-card, .achievement-card, .certification-card, .timeline-item"
             );
 
 
         const observer =
             new IntersectionObserver(
-
                 entries => {
 
                     entries.forEach(entry => {
 
-                        if (
-                            entry.isIntersecting
-                        ) {
+                        if (entry.isIntersecting) {
 
                             entry.target.classList.add(
                                 "show"
@@ -3066,23 +2534,17 @@ ${message}`;
                     });
 
                 },
-
                 {
                     threshold: 0.12
                 }
-
             );
 
 
-        revealElements.forEach(
-            element => {
+        revealElements.forEach(element => {
 
-                observer.observe(
-                    element
-                );
+            observer.observe(element);
 
-            }
-        );
+        });
 
     </script>
 
