@@ -4771,51 +4771,58 @@ body.gallery-open {
     }
 
 }
-/* =========================================================
-   CERTIFICATION - CLEAN PROFESSIONAL LAYOUT
+=========================================================
+   CERTIFICATION — FINAL CLEAN PROFESSIONAL
 ========================================================= */
 
 .certification-section {
-    padding-top: 100px;
-    padding-bottom: 120px;
+    padding: 110px 0 120px;
+    background: #080d15;
 }
 
+/* INTRO */
 .certification-intro {
-    max-width: 650px;
-    margin: 0 0 45px;
+    max-width: 680px;
+    margin: -25px 0 45px 44px;
 }
 
 .certification-intro p {
     margin: 0;
-    color: var(--text-muted);
-    font-size: 15px;
+    color: var(--text-secondary);
+    font-size: 14px;
     line-height: 1.8;
 }
 
 
-/* ================= CERTIFICATION GRID ================= */
+/* =========================================================
+   GRID
+========================================================= */
 
 .certification-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 28px;
+    gap: 22px;
     align-items: stretch;
 }
 
 
-/* ================= CARD ================= */
+/* =========================================================
+   CARD
+========================================================= */
 
 .certification-card {
+    position: relative;
+
     display: flex;
     flex-direction: column;
 
     min-width: 0;
-
-    background: rgba(255, 255, 255, 0.025);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 18px;
-
     overflow: hidden;
+
+    background: rgba(13, 20, 32, 0.75);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
 
     transition:
         transform 0.3s ease,
@@ -4826,10 +4833,10 @@ body.gallery-open {
 .certification-card:hover {
     transform: translateY(-6px);
 
-    border-color: rgba(255, 255, 255, 0.16);
+    border-color: rgba(59, 130, 246, 0.35);
 
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.25);
+        0 20px 50px rgba(0, 0, 0, 0.30);
 }
 
 
@@ -4845,14 +4852,20 @@ body.gallery-open {
     justify-content: center;
 
     width: 100%;
-    height: 280px;
+    height: 245px;
 
-    padding: 20px;
+    margin: 0;
+    padding: 18px;
 
     border: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
-    background: #111;
+    background:
+        linear-gradient(
+            145deg,
+            #111a28,
+            #0b111c
+        );
 
     overflow: hidden;
 
@@ -4867,14 +4880,15 @@ body.gallery-open {
 
     object-fit: contain;
 
+    border-radius: 6px;
+
     transition:
-        transform 0.4s ease,
-        filter 0.4s ease;
+        transform 0.45s ease,
+        filter 0.45s ease;
 }
 
-.certification-card:hover
-.certificate-image img {
-    transform: scale(1.03);
+.certification-card:hover .certificate-image img {
+    transform: scale(1.035);
 }
 
 
@@ -4889,15 +4903,14 @@ body.gallery-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 9px;
 
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(3, 7, 12, 0.62);
 
-    color: #fff;
+    color: white;
 
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
+    font-size: 11px;
+    font-weight: 700;
 
     opacity: 0;
 
@@ -4905,17 +4918,17 @@ body.gallery-open {
 }
 
 .certificate-overlay i {
-    font-size: 15px;
+    color: var(--blue-light);
+    font-size: 14px;
 }
 
-.certificate-image:hover
-.certificate-overlay {
+.certificate-image:hover .certificate-overlay {
     opacity: 1;
 }
 
 
 /* =========================================================
-   CERTIFICATION CONTENT
+   CONTENT
 ========================================================= */
 
 .certification-content {
@@ -4924,60 +4937,69 @@ body.gallery-open {
 
     flex: 1;
 
-    padding: 22px 23px 24px;
+    padding: 21px 22px 23px;
 }
 
 
-/* ================= META ================= */
+/* =========================================================
+   META
+========================================================= */
 
 .certification-meta {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .certification-meta span {
-    color: var(--accent-color);
+    color: var(--blue-light);
 
-    font-size: 12px;
+    font-family: monospace;
+    font-size: 9px;
     font-weight: 700;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .certification-meta i {
-    color: var(--accent-color);
+    color: var(--blue-light);
 
-    font-size: 16px;
+    font-size: 14px;
 }
 
 
-/* ================= TITLE ================= */
+/* =========================================================
+   TITLE
+========================================================= */
 
 .certification-content h3 {
-    margin: 0 0 9px;
+    margin: 0 0 8px;
 
-    color: var(--text-primary);
+    color: #f4f7fb;
 
-    font-size: 18px;
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: 17px;
     font-weight: 700;
 
-    line-height: 1.4;
+    line-height: 1.35;
 }
 
 
-/* ================= DESCRIPTION ================= */
+/* =========================================================
+   DESCRIPTION
+========================================================= */
 
 .certification-content p {
     margin: 0;
 
     color: var(--text-muted);
 
-    font-size: 13px;
+    font-size: 11px;
 
-    line-height: 1.65;
+    line-height: 1.7;
 }
 
 
@@ -4995,9 +5017,11 @@ body.gallery-open {
     align-items: center;
     justify-content: center;
 
-    padding: 40px;
+    padding: 30px;
 
-    background: rgba(0, 0, 0, 0.94);
+    background: rgba(3, 6, 11, 0.94);
+
+    backdrop-filter: blur(10px);
 
     opacity: 0;
     visibility: hidden;
@@ -5035,17 +5059,19 @@ body.gallery-open {
     border-radius: 8px;
 
     box-shadow:
-        0 30px 90px rgba(0, 0, 0, 0.6);
+        0 30px 90px rgba(0, 0, 0, 0.65);
 }
 
 
-/* ================= CLOSE ================= */
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
 
 .certificate-lightbox-close {
     position: absolute;
 
-    top: 25px;
-    right: 30px;
+    top: 22px;
+    right: 25px;
 
     z-index: 2;
 
@@ -5053,27 +5079,32 @@ body.gallery-open {
     align-items: center;
     justify-content: center;
 
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
 
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 50%;
 
     background: rgba(255, 255, 255, 0.08);
 
-    color: #fff;
+    color: white;
 
-    font-size: 19px;
+    font-size: 18px;
 
     cursor: pointer;
 
     transition:
         background 0.25s ease,
+        border-color 0.25s ease,
         transform 0.25s ease;
 }
 
 .certificate-lightbox-close:hover {
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(59, 130, 246, 0.12);
+
+    border-color: var(--blue);
+
+    color: var(--blue-light);
 
     transform: rotate(90deg);
 }
@@ -5089,6 +5120,9 @@ body.gallery-open {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .certificate-image {
+        height: 250px;
+    }
 }
 
 
@@ -5096,20 +5130,24 @@ body.gallery-open {
    MOBILE
 ========================================================= */
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 
     .certification-section {
-        padding-top: 70px;
-        padding-bottom: 80px;
+        padding: 80px 0 90px;
+    }
+
+    .certification-intro {
+        margin: -20px 0 35px;
     }
 
     .certification-grid {
         grid-template-columns: 1fr;
-        gap: 22px;
+        gap: 20px;
     }
 
     .certificate-image {
-        height: 300px;
+        height: 280px;
+        padding: 18px;
     }
 
     .certification-content {
@@ -5120,8 +5158,12 @@ body.gallery-open {
         font-size: 17px;
     }
 
+    .certification-content p {
+        font-size: 11px;
+    }
+
     .certificate-lightbox {
-        padding: 20px;
+        padding: 18px;
     }
 
     .certificate-lightbox-content img {
@@ -5135,6 +5177,22 @@ body.gallery-open {
 
         width: 42px;
         height: 42px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .certificate-image {
+        height: 245px;
+    }
+
+    .certification-content {
+        padding: 18px;
     }
 
 }
