@@ -552,83 +552,57 @@ img {
 ========================= */
 
 .hero-buttons {
-
     display: flex;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-
+    align-items: center;
+    gap: 14px;
+    flex-wrap: nowrap;
+    margin-top: 28px;
 }
 
-
-.btn {
-
+.hero-buttons .btn-primary,
+.hero-buttons .btn-secondary {
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
+    gap: 10px;
 
-    gap: 12px;
+    height: 52px;
+    padding: 0 26px;
 
-    padding: 13px 20px;
-
-    border-radius: 9px;
-
-    font-size: 13px;
-
+    border-radius: 10px;
+    font-size: 15px;
     font-weight: 700;
 
+    text-decoration: none;
     transition: var(--transition);
-
+    white-space: nowrap;
 }
 
-
-.btn-primary {
-
+.hero-buttons .btn-primary {
     background: var(--blue);
-
     color: white;
-
-    box-shadow:
-        0 10px 30px
-        rgba(37,99,235,0.25);
-
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.25);
 }
 
-
-.btn-primary:hover {
-
+.hero-buttons .btn-primary:hover {
     background: var(--blue-light);
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 15px 35px
-        rgba(37,99,235,0.35);
-
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.35);
 }
 
-
-.btn-outline {
-
+.hero-buttons .btn-secondary {
     border: 1px solid var(--border);
-
-    background: rgba(255,255,255,0.015);
-
+    background: rgba(255, 255, 255, 0.015);
+    color: white;
 }
 
-
-.btn-outline:hover {
-
+.hero-buttons .btn-secondary:hover {
     border-color: var(--blue);
-
     color: var(--blue-light);
-
-    transform: translateY(-3px);
-
+    background: rgba(59, 130, 246, 0.06);
+    transform: translateY(-2px);
 }
+
 
 
 .social-links {
