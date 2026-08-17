@@ -5518,4 +5518,326 @@ body.gallery-open {
     }
 
 }
+/* =====================================================
+   MOBILE HERO - SIDE BY SIDE
+   ===================================================== */
 
+@media (max-width: 800px) {
+
+    /* HERO */
+    .hero {
+        min-height: auto;
+        padding-top: 105px;
+        padding-bottom: 55px;
+        overflow: hidden;
+    }
+
+    .hero-container {
+        width: calc(100% - 30px);
+        max-width: none;
+
+        display: grid;
+        grid-template-columns: minmax(0, 1.45fr) minmax(115px, 0.75fr);
+
+        gap: 12px;
+        align-items: start;
+
+        position: relative;
+    }
+
+    /* LEFT CONTENT */
+    .hero-content {
+        padding-top: 25px;
+        min-width: 0;
+        position: relative;
+        z-index: 3;
+    }
+
+    /* STATUS */
+    .available {
+        margin-bottom: 45px;
+        padding: 7px 11px;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    /* HELLO */
+    .hero-small {
+        font-size: 10px;
+        letter-spacing: 3px;
+        margin-bottom: 8px;
+    }
+
+    /* NAME */
+    .hero h1 {
+        font-size: 35px;
+        line-height: 0.98;
+        letter-spacing: -2px;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+        -webkit-text-stroke: 1px rgba(255,255,255,0.5);
+    }
+
+    /* POSITION */
+    .hero h2 {
+        font-size: 13px;
+        line-height: 1.65;
+        margin-bottom: 16px;
+    }
+
+    .hero h2 b {
+        padding: 0 4px;
+    }
+
+    /* DESCRIPTION */
+    .hero-description {
+        max-width: 100%;
+        font-size: 11px;
+        line-height: 1.65;
+        margin-bottom: 20px;
+    }
+
+    /* BUTTONS */
+    .hero-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        min-height: 48px;
+        padding: 10px 8px;
+        font-size: 11px;
+        gap: 5px;
+        white-space: nowrap;
+    }
+
+    /* VIEW CV FULL WIDTH */
+    .hero-buttons .btn:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
+    /* SOCIAL */
+    .hero-socials {
+        margin-top: 18px;
+        display: flex;
+        gap: 8px;
+    }
+
+    .hero-socials a {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* =================================================
+       RIGHT SIDE - PHOTO / ENGINEERING PROFILE
+       ================================================= */
+
+    .hero-visual {
+        min-height: 0;
+        height: auto;
+        margin-top: 135px;
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        position: relative;
+        z-index: 2;
+    }
+
+    .engineering-card {
+        width: 100%;
+        max-width: 145px;
+
+        transform: none !important;
+
+        border-radius: 13px;
+    }
+
+    .engineering-content {
+        padding: 12px;
+    }
+
+    .card-header {
+        height: 30px;
+        padding: 0 10px;
+        gap: 7px;
+    }
+
+    .terminal-buttons {
+        gap: 4px;
+    }
+
+    .terminal-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .terminal-title {
+        font-size: 7px;
+    }
+
+    .chip-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        font-size: 12px;
+    }
+
+    .engineering-title {
+        gap: 8px;
+    }
+
+    .engineering-title strong {
+        font-size: 12px;
+    }
+
+    .engineering-title span {
+        font-size: 7px;
+    }
+
+    .engineering-line {
+        margin: 12px 0;
+    }
+
+    .engineering-stats {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .engineering-stat {
+        min-height: 38px;
+        padding: 6px;
+        gap: 6px;
+        border-radius: 7px;
+    }
+
+    .stat-icon {
+        width: 22px;
+        height: 22px;
+        border-radius: 5px;
+        font-size: 9px;
+    }
+
+    .engineering-stat span {
+        font-size: 6px;
+    }
+
+    .engineering-stat strong {
+        font-size: 6px;
+    }
+
+    .skill-progress {
+        margin-top: 12px;
+    }
+
+    .progress-label {
+        font-size: 6px;
+        margin-bottom: 6px;
+    }
+
+    .progress-item {
+        grid-template-columns: 45px 1fr;
+        gap: 5px;
+        margin-bottom: 5px;
+    }
+
+    .progress-item > span {
+        font-size: 6px;
+    }
+
+    /* FLOATING CARDS */
+    .floating-card {
+        display: none;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 500px) {
+
+    .hero-container {
+        grid-template-columns: minmax(0, 1.5fr) minmax(105px, 0.7fr);
+        gap: 8px;
+    }
+
+    .hero {
+        padding-top: 95px;
+    }
+
+    .hero-content {
+        padding-top: 20px;
+    }
+
+    .available {
+        font-size: 9px;
+        margin-bottom: 38px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        letter-spacing: -1.8px;
+    }
+
+    .hero h2 {
+        font-size: 12px;
+    }
+
+    .hero-description {
+        font-size: 10.5px;
+        line-height: 1.65;
+    }
+
+    .hero-buttons .btn {
+        font-size: 10px;
+        min-height: 46px;
+    }
+
+    .hero-visual {
+        margin-top: 125px;
+    }
+
+    .engineering-card {
+        max-width: 125px;
+    }
+
+    .engineering-content {
+        padding: 10px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .hero-container {
+        grid-template-columns: minmax(0, 1.55fr) minmax(95px, 0.65fr);
+        gap: 6px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .hero h2 {
+        font-size: 11px;
+    }
+
+    .hero-description {
+        font-size: 10px;
+    }
+
+    .engineering-card {
+        max-width: 110px;
+    }
+}
