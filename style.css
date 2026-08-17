@@ -11129,3 +11129,98 @@ body {
         width: 112px !important;
     }
 }
+/* =========================================
+   PROFILE CARD = SAME WIDTH AS PHOTO
+========================================= */
+
+@media (max-width: 600px) {
+
+    .professional-profile {
+        width: 125px !important;
+        max-width: 125px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+
+        margin: 0 auto !important;
+    }
+
+    /* FOTO */
+    .profile-frame {
+        width: 125px !important;
+        height: 170px !important;
+
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* ENGINEERING PROFILE
+       SAMA LEBAR DENGAN FOTO */
+    .profile-caption {
+        width: 125px !important;
+        min-width: 125px !important;
+        max-width: 125px !important;
+
+        margin: 7px auto 0 !important;
+
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+
+        transform: none !important;
+
+        align-self: center !important;
+
+        box-sizing: border-box !important;
+
+        text-align: center !important;
+
+        padding: 8px 5px !important;
+
+        border-radius: 10px !important;
+    }
+
+    /* BADGE SAMA CENTER */
+    .profile-badges {
+        width: 125px !important;
+        max-width: 125px !important;
+
+        display: flex !important;
+        justify-content: center !important;
+
+        margin: 5px auto 0 !important;
+
+        position: relative !important;
+        left: auto !important;
+        transform: none !important;
+    }
+}
+
+
+/* HP KECIL */
+@media (max-width: 390px) {
+
+    .professional-profile {
+        width: 115px !important;
+        max-width: 115px !important;
+    }
+
+    .profile-frame {
+        width: 115px !important;
+        height: 158px !important;
+    }
+
+    .profile-caption {
+        width: 115px !important;
+        min-width: 115px !important;
+        max-width: 115px !important;
+    }
+
+    .profile-badges {
+        width: 115px !important;
+        max-width: 115px !important;
+    }
+}
