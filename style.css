@@ -5545,7 +5545,10 @@ body.gallery-open {
         position: relative;
     }
 
-    /* LEFT CONTENT */
+    /* =================================================
+       LEFT CONTENT
+       ================================================= */
+
     .hero-content {
         padding-top: 25px;
         min-width: 0;
@@ -5577,7 +5580,7 @@ body.gallery-open {
     }
 
     .hero h1 span {
-        -webkit-text-stroke: 1px rgba(255,255,255,0.5);
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
     }
 
     /* POSITION */
@@ -5599,7 +5602,10 @@ body.gallery-open {
         margin-bottom: 20px;
     }
 
-    /* BUTTONS */
+    /* =================================================
+       BUTTONS
+       ================================================= */
+
     .hero-buttons {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -5615,12 +5621,15 @@ body.gallery-open {
         white-space: nowrap;
     }
 
-    /* VIEW CV FULL WIDTH */
+    /* VIEW CV - FULL WIDTH */
     .hero-buttons .btn:nth-child(3) {
         grid-column: 1 / -1;
     }
 
-    /* SOCIAL */
+    /* =================================================
+       SOCIAL
+       ================================================= */
+
     .hero-socials {
         margin-top: 18px;
         display: flex;
@@ -5633,7 +5642,7 @@ body.gallery-open {
     }
 
     /* =================================================
-       RIGHT SIDE - PHOTO / ENGINEERING PROFILE
+       RIGHT SIDE - HERO VISUAL
        ================================================= */
 
     .hero-visual {
@@ -5649,12 +5658,12 @@ body.gallery-open {
         z-index: 2;
     }
 
+    /* OLD ENGINEERING CARD */
     .engineering-card {
         width: 100%;
         max-width: 145px;
 
         transform: none !important;
-
         border-radius: 13px;
     }
 
@@ -5750,9 +5759,65 @@ body.gallery-open {
         font-size: 6px;
     }
 
-    /* FLOATING CARDS */
+    /* HIDE FLOATING CARDS */
     .floating-card {
         display: none;
+    }
+
+    /* =================================================
+       PROFESSIONAL PROFILE
+       ================================================= */
+
+    .professional-profile {
+        width: 190px;
+        max-width: 100%;
+        padding: 12px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        border-radius: 16px;
+    }
+
+    .profile-frame {
+        width: 100%;
+        height: 210px;
+        margin: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .profile-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .profile-caption {
+        padding-top: 10px;
+    }
+
+    .profile-badges {
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .profile-badge {
+        padding: 7px 8px;
+    }
+
+    .professional-profile .profile-label {
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .professional-profile h3 {
+        font-size: 16px;
+        margin: 6px 0;
+    }
+
+    .professional-profile p {
+        font-size: 9px;
     }
 }
 
@@ -5763,13 +5828,15 @@ body.gallery-open {
 
 @media (max-width: 500px) {
 
-    .hero-container {
-        grid-template-columns: minmax(0, 1.5fr) minmax(105px, 0.7fr);
-        gap: 8px;
-    }
-
     .hero {
         padding-top: 95px;
+        padding-bottom: 45px;
+    }
+
+    .hero-container {
+        width: calc(100% - 24px);
+        grid-template-columns: minmax(0, 1.5fr) minmax(105px, 0.7fr);
+        gap: 8px;
     }
 
     .hero-content {
@@ -5795,9 +5862,23 @@ body.gallery-open {
         line-height: 1.65;
     }
 
+    .hero-buttons {
+        gap: 7px;
+    }
+
     .hero-buttons .btn {
         font-size: 10px;
         min-height: 46px;
+        padding: 9px 6px;
+    }
+
+    .hero-socials {
+        gap: 7px;
+    }
+
+    .hero-socials a {
+        width: 38px;
+        height: 38px;
     }
 
     .hero-visual {
@@ -5811,6 +5892,33 @@ body.gallery-open {
     .engineering-content {
         padding: 10px;
     }
+
+    /* PROFESSIONAL PROFILE */
+    .professional-profile {
+        width: 165px;
+        padding: 10px;
+    }
+
+    .profile-frame {
+        height: 185px;
+    }
+
+    .professional-profile h3 {
+        font-size: 14px;
+    }
+
+    .professional-profile p {
+        font-size: 8px;
+    }
+
+    .professional-profile .profile-label {
+        font-size: 8px;
+    }
+
+    .profile-badge {
+        padding: 6px 7px;
+        font-size: 8px;
+    }
 }
 
 
@@ -5818,91 +5926,55 @@ body.gallery-open {
    VERY SMALL PHONE
    ===================================================== */
 
-@media (max-width: 768px) {
-    .engineering-profile {
-        width: 220px;
-        padding: 16px 14px;
-        border-radius: 16px;
-    }
+@media (max-width: 380px) {
 
-    .engineering-profile .profile-label {
-        font-size: 9px;
-        letter-spacing: 1.5px;
-    }
-
-    .engineering-profile h3 {
-        font-size: 16px;
-        margin: 6px 0;
-    }
-
-    .engineering-profile p {
-        font-size: 9px;
-    }
-}
-/* =========================================================
-   MOBILE - PROFESSIONAL PROFILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .professional-profile {
-        width: 190px;
-        max-width: 190px;
-        padding: 14px;
-        margin: 0 auto;
-        border-radius: 16px;
-    }
-
-    .profile-frame {
-        width: 100%;
-        height: 220px;
-        border-radius: 12px;
-        overflow: hidden;
-    }
-
-    .profile-frame img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .profile-caption {
-        padding-top: 10px;
-    }
-
-    .profile-badges {
+    .hero-container {
+        grid-template-columns: minmax(0, 1.55fr) minmax(90px, 0.65fr);
         gap: 6px;
-        margin-top: 10px;
     }
 
-    .profile-badge {
-        padding: 7px 8px;
+    .hero {
+        padding-top: 90px;
     }
 
-}
-/* ================= MOBILE PROFESSIONAL PROFILE ================= */
+    .hero-content {
+        padding-top: 15px;
+    }
 
-@media (max-width: 768px) {
+    .available {
+        font-size: 8px;
+        padding: 6px 8px;
+        margin-bottom: 32px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero h2 {
+        font-size: 11px;
+    }
+
+    .hero-description {
+        font-size: 9.5px;
+    }
+
+    .hero-buttons .btn {
+        font-size: 9px;
+        min-height: 43px;
+    }
+
+    .hero-visual {
+        margin-top: 115px;
+    }
 
     .professional-profile {
-        width: 210px;
-        max-width: 210px;
-        margin: 0 auto;
-        padding: 12px;
-        box-sizing: border-box;
+        width: 145px;
+        padding: 9px;
     }
 
     .profile-frame {
-        width: 100%;
-        height: 210px;
-        margin: 0;
-        box-sizing: border-box;
+        height: 165px;
     }
-
-    .profile-frame img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
 }
