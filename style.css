@@ -5880,3 +5880,29 @@ body.gallery-open {
     }
 
 }
+/* ================= MOBILE PROFESSIONAL PROFILE ================= */
+
+@media (max-width: 768px) {
+
+    .professional-profile {
+        width: 210px;
+        max-width: 210px;
+        margin: 0 auto;
+        padding: 12px;
+        box-sizing: border-box;
+    }
+
+    .profile-frame {
+        width: 100%;
+        height: 210px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .profile-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+}
