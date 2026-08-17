@@ -5839,3 +5839,44 @@ body.gallery-open {
         font-size: 9px;
     }
 }
+/* =========================================================
+   MOBILE - PROFESSIONAL PROFILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .professional-profile {
+        width: 190px;
+        max-width: 190px;
+        padding: 14px;
+        margin: 0 auto;
+        border-radius: 16px;
+    }
+
+    .profile-frame {
+        width: 100%;
+        height: 220px;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    .profile-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .profile-caption {
+        padding-top: 10px;
+    }
+
+    .profile-badges {
+        gap: 6px;
+        margin-top: 10px;
+    }
+
+    .profile-badge {
+        padding: 7px 8px;
+    }
+
+}
