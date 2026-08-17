@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     <title>Wisnu Rahmat Dwi Putra | Electrical Engineer</title>
 
     <meta name="description"
-        content="Portfolio Wisnu Rahmat Dwi Putra - Electrical Engineer, Embedded System, IoT, Maintenance & Instrumentation.">
+        content="Portfolio of Wisnu Rahmat Dwi Putra - Electrical Engineer specializing in Embedded Systems, IoT, Maintenance & Instrumentation.">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,12 +31,14 @@
         .certification-intro { max-width: 680px; margin: -8px 0 42px; }
         .certification-intro p { color: var(--text-muted); line-height: 1.8; font-size: 15px; }
         .certification-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
-        .certification-card { overflow:hidden; background:var(--card-bg); border:1px solid var(--border-color); border-radius:18px; transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease; }
-        .certification-card:hover { transform:translateY(-7px); border-color:rgba(255,255,255,.18); box-shadow:0 20px 45px rgba(0,0,0,.18); }
+        .certification-card { position:relative; overflow:hidden; background:var(--card-bg); border:1px solid var(--border-color); border-radius:18px; transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s ease,box-shadow .35s ease; }
+        .certification-card::before { content:""; position:absolute; inset:0 0 auto 0; height:2px; background:linear-gradient(90deg,transparent,var(--accent-color),transparent); opacity:0; transition:opacity .35s ease; }
+        .certification-card:hover { transform:translateY(-7px); border-color:rgba(59,130,246,.35); box-shadow:0 22px 50px rgba(0,0,0,.28),0 0 0 1px rgba(59,130,246,.08),0 20px 60px rgba(37,99,235,.12); }
+        .certification-card:hover::before { opacity:1; }
         .certificate-image { position:relative; display:block; width:100%; height:285px; padding:0; border:0; background:#111; overflow:hidden; cursor:pointer; }
-        .certificate-image img { width:100%; height:100%; display:block; object-fit:contain; transition:transform .45s ease; }
-        .certification-card:hover .certificate-image img { transform:scale(1.035); }
-        .certificate-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:10px; background:rgba(0,0,0,.62); color:#fff; font-size:14px; font-weight:600; opacity:0; transition:opacity .3s ease; }
+        .certificate-image img { width:100%; height:100%; display:block; object-fit:contain; transition:transform .45s cubic-bezier(.2,.8,.2,1); }
+        .certification-card:hover .certificate-image img { transform:scale(1.045); }
+        .certificate-overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:10px; background:rgba(5,8,14,.72); backdrop-filter:blur(3px); color:#fff; font-size:14px; font-weight:600; opacity:0; transition:opacity .3s ease; }
         .certificate-image:hover .certificate-overlay { opacity:1; }
         .certification-content { padding:22px 23px 25px; }
         .certification-meta { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
@@ -49,7 +51,7 @@
         .certificate-lightbox-content { max-width:92vw; max-height:90vh; display:flex; align-items:center; justify-content:center; }
         .certificate-lightbox-content img { max-width:92vw; max-height:88vh; width:auto; height:auto; object-fit:contain; border-radius:8px; box-shadow:0 25px 80px rgba(0,0,0,.55); }
         .certificate-lightbox-close { position:absolute; top:24px; right:28px; width:48px; height:48px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,255,255,.2); border-radius:50%; background:rgba(255,255,255,.08); color:#fff; font-size:20px; cursor:pointer; transition:all .3s ease; }
-        .certificate-lightbox-close:hover { background:rgba(255,255,255,.18); transform:rotate(90deg); }
+        .certificate-lightbox-close:hover { background:rgba(59,130,246,.18); border-color:var(--accent-color); transform:rotate(90deg); }
         body.gallery-open { overflow:hidden; }
         @media (max-width:1000px) { .certification-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
         @media (max-width:650px) { .certification-grid { grid-template-columns:1fr; } .certificate-image { height:300px; } .certificate-lightbox { padding:20px; } .certificate-lightbox-content img { max-width:95vw; max-height:84vh; } .certificate-lightbox-close { top:15px; right:15px; } }
@@ -143,10 +145,10 @@
 
                     <p class="hero-description">
 
-                        Lulusan S1 Teknik Elektro Universitas Tadulako
-                        dengan kompetensi di bidang Embedded System,
-                        Internet of Things, Maintenance, Instrumentasi,
-                        dan sistem kontrol.
+                        Bachelor's graduate in Electrical Engineering from
+                        Universitas Tadulako with expertise in Embedded Systems,
+                        Internet of Things, Maintenance, Instrumentation,
+                        and control systems.
 
                     </p>
 
@@ -209,7 +211,7 @@
 
                     <div class="professional-profile">
                         <div class="profile-frame">
-                            <img src="profil-profesional.jpg" alt="Foto profesional Wisnu Rahmat Dwi Putra">
+                            <img src="profil-profesional.jpg" alt="Professional photo of Wisnu Rahmat Dwi Putra">
                         </div>
 
                         <div class="profile-caption">
@@ -272,34 +274,34 @@
 
                         <p class="lead">
 
-                            Saya adalah lulusan
-                            <strong>S1 Teknik Elektro Universitas
+                            I am a graduate of
+                            <strong>Electrical Engineering at Universitas
                             Tadulako</strong>
-                            dengan fokus pada Embedded System,
+                            with a focus on Embedded Systems,
                             Internet of Things, Maintenance,
-                            dan Instrumentasi.
+                            and Instrumentation.
 
                         </p>
 
 
                         <p>
 
-                            Saya memiliki pengalaman dalam
-                            pengembangan sistem berbasis
-                            mikrokontroler, integrasi sensor,
-                            pemrograman C/C++, komunikasi IoT,
-                            pengujian, dan troubleshooting.
+                            I have hands-on experience in
+                            developing microcontroller-based
+                            systems, sensor integration,
+                            C/C++ programming, IoT communication,
+                            testing, and troubleshooting.
 
                         </p>
 
 
                         <p>
 
-                            Saya juga memiliki pengalaman dalam
-                            preventive dan corrective maintenance,
-                            instalasi dan perawatan CCTV,
-                            troubleshooting sistem listrik,
-                            serta inspeksi peralatan.
+                            I also have experience in
+                            preventive and corrective maintenance,
+                            CCTV installation and upkeep,
+                            electrical system troubleshooting,
+                            and equipment inspection.
 
                         </p>
 
@@ -352,7 +354,7 @@
                                 </span>
 
                                 <strong>
-                                    Palu, Sulawesi Tengah
+                                    Palu, Central Sulawesi
                                 </strong>
 
                             </div>
@@ -474,10 +476,10 @@
                 <h4>Electronic Technician</h4>
 
                 <p>
-                    Melakukan instalasi, preventive maintenance, dan
-                    perbaikan sistem CCTV pada armada mobil tangki.
-                    Melakukan inspeksi, pengujian, troubleshooting kamera,
-                    kabel, konektor, serta sistem kelistrikan kendaraan.
+                    Performed installation, preventive maintenance, and
+                    repair of CCTV systems for a fleet of tanker trucks.
+                    Carried out inspection, testing, and troubleshooting of cameras,
+                    cabling, connectors, and vehicle electrical systems.
                 </p>
 
                 <div class="experience-tags">
@@ -514,14 +516,14 @@
 
                 <h3>SSC Works</h3>
 
-                <h4>Maintenance Umum — Magang Kementerian Batch 2</h4>
+                <h4>General Maintenance — Ministry Internship Batch 2</h4>
 
                 <p>
-                    Melaksanakan preventive dan corrective maintenance
-                    pada sistem kelistrikan, mesin, CCTV, panel listrik,
-                    serta fasilitas workshop. Melakukan troubleshooting,
-                    inspeksi berkala, dan mendukung instalasi panel listrik
-                    sesuai SOP dan standar K3.
+                    Carried out preventive and corrective maintenance
+                    on electrical systems, machinery, CCTV, electrical panels,
+                    and workshop facilities. Performed troubleshooting,
+                    periodic inspections, and supported electrical panel installation
+                    in compliance with SOP and K3 (occupational health & safety) standards.
                 </p>
 
                 <div class="experience-tags">
@@ -561,10 +563,10 @@
                 <h4>Embedded System & IoT</h4>
 
                 <p>
-                    Merancang dan mengembangkan sistem berbasis Internet
-                    of Things (IoT), mengembangkan firmware, melakukan
-                    integrasi hardware dan software, membuat prototype,
-                    serta melakukan pengujian dan validasi sistem.
+                    Designed and developed Internet of Things (IoT)
+                    based systems, developed firmware, performed
+                    hardware-software integration, built prototypes,
+                    and carried out system testing and validation.
                 </p>
 
                 <div class="project-highlights">
@@ -572,39 +574,39 @@
                     <div class="project-mini">
                         <strong>Hydroponic Monitoring</strong>
                         <span>
-                            Monitoring nutrisi tanaman menggunakan
-                            Fuzzy Logic berbasis IoT.
+                            Plant nutrient monitoring using
+                            IoT-based Fuzzy Logic.
                         </span>
                     </div>
 
                     <div class="project-mini">
                         <strong>Smart Shrimp Pond</strong>
                         <span>
-                            Sistem kendali kadar oksigen tambak udang
-                            berbasis IoT dan photovoltaic.
+                            Oxygen level control system for shrimp ponds,
+                            powered by IoT and photovoltaic energy.
                         </span>
                     </div>
 
                     <div class="project-mini">
                         <strong>3-Phase Electrical Monitoring</strong>
                         <span>
-                            Monitoring listrik tiga fasa menggunakan
-                            LoRa berbasis IoT.
+                            Three-phase power monitoring using
+                            IoT-based LoRa communication.
                         </span>
                     </div>
 
                     <div class="project-mini">
                         <strong>Gas Leak Detector</strong>
                         <span>
-                            Sistem pendeteksi kebocoran gas berbasis IoT.
+                            IoT-based gas leak detection system.
                         </span>
                     </div>
 
                     <div class="project-mini">
                         <strong>Physics Experiment System</strong>
                         <span>
-                            Sistem gerak jatuh bebas dan bidang miring
-                            berbasis Arduino Uno.
+                            Free-fall and inclined-plane motion experiment
+                            system based on Arduino Uno.
                         </span>
                     </div>
 
@@ -646,14 +648,14 @@
 
                 <h3>PT Agraria Indonesia Berdaya</h3>
 
-                <h4>Program Magang Bersertifikat</h4>
+                <h4>Certified Internship Program</h4>
 
                 <p>
-                    Berpartisipasi dalam proyek pengelolaan lahan dan
-                    lingkungan berkelanjutan, pengolahan limbah organik
-                    menjadi kompos, serta pengembangan dan instalasi
-                    sistem akuaponik yang mengintegrasikan budidaya
-                    ikan dan tanaman.
+                    Took part in sustainable land and environmental
+                    management projects, organic waste processing
+                    into compost, as well as the development and installation
+                    of an aquaponics system integrating fish
+                    and plant cultivation.
                 </p>
 
                 <div class="experience-tags">
@@ -693,10 +695,10 @@
                 <h4>IoT Engineer</h4>
 
                 <p>
-                    Mengembangkan sistem Internet of Things melalui
-                    pembuatan prototype, integrasi sensor, pemrograman
-                    mikrokontroler, dan pengembangan sistem monitoring
-                    menggunakan protokol MQTT.
+                    Developed Internet of Things systems through
+                    prototype building, sensor integration, microcontroller
+                    programming, and monitoring system development
+                    using the MQTT protocol.
                 </p>
 
                 <div class="experience-tags">
@@ -734,14 +736,14 @@
 
                 <h3>PT Sharp Electronics</h3>
 
-                <h4>Praktek Kerja Lapangan</h4>
+                <h4>Field Work Practice</h4>
 
                 <p>
-                    Membantu pemeliharaan dan pengujian sistem elektronik
-                    serta peralatan rumah tangga. Melakukan troubleshooting
-                    dan diagnostik untuk mengidentifikasi kerusakan pada
-                    perangkat elektronik serta mendukung proses kontrol
-                    kualitas untuk memastikan keandalan produk.
+                    Assisted with the maintenance and testing of electronic
+                    systems and home appliances. Performed troubleshooting
+                    and diagnostics to identify faults in
+                    electronic devices, and supported quality control
+                    processes to ensure product reliability.
                 </p>
 
                 <div class="experience-tags">
@@ -770,7 +772,7 @@
                         </div>
                     </div>
                     <p class="section-description">
-                        Pengalaman akademik, organisasi, dan kepemimpinan selama menempuh pendidikan di Universitas Tadulako.
+                        Academic, organizational, and leadership experience gained during my studies at Universitas Tadulako.
                     </p>
                 </div>
 
@@ -794,16 +796,16 @@
                     ACADEMIC EXPERIENCE
                 </span>
 
-                <h3>Laboratorium Mikrokontroler & Mikroprosesor</h3>
+                <h3>Microcontroller & Microprocessor Laboratory</h3>
 
-                <h4>Asisten Laboratorium</h4>
+                <h4>Laboratory Assistant</h4>
 
                 <p>
-                    Membantu dosen dalam pelaksanaan praktikum
-                    mikrokontroler dan mikroprosesor. Membimbing mahasiswa
-                    dalam penggunaan mikrokontroler dan pemrograman
-                    embedded system dasar serta membantu pengujian
-                    hardware dan rangkaian elektronika.
+                    Assisted lecturers in conducting microcontroller
+                    and microprocessor lab sessions. Guided students
+                    in the use of microcontrollers and basic embedded
+                    system programming, and helped with hardware
+                    and electronic circuit testing.
                 </p>
 
                 <div class="experience-tags">
@@ -836,15 +838,15 @@
 
                 <h3>Robotech Tadulako</h3>
 
-                <h4>Ketua Umum</h4>
+                <h4>General Chairman</h4>
 
                 <p>
-                    Memimpin dan mengoordinasikan kegiatan organisasi
-                    robotika mahasiswa, termasuk persiapan teknis dan
-                    manajemen tim dalam kompetisi robotika tingkat nasional.
-                    Berhasil membawa tim Robotech Tadulako lolos dan
-                    berpartisipasi dalam kompetisi robotika nasional
-                    di Semarang pada 2023.
+                    Led and coordinated the activities of a student
+                    robotics organization, including technical preparation and
+                    team management for national-level robotics competitions.
+                    Successfully brought the Robotech Tadulako team to qualify for
+                    and compete in the national robotics competition
+                    in Semarang in 2023.
                 </p>
 
                 <div class="experience-tags">
@@ -877,13 +879,13 @@
 
                 <h3>Robotech Tadulako</h3>
 
-                <h4>Staff Divisi Minat & Bakat</h4>
+                <h4>Interests & Talents Division Staff</h4>
 
                 <p>
-                    Mendukung penyelenggaraan kegiatan pengembangan
-                    minat dan bakat mahasiswa serta berpartisipasi
-                    dalam perencanaan, pelaksanaan, dan koordinasi
-                    kegiatan mahasiswa di bidang teknologi dan kompetisi.
+                    Supported the organization of student interest and
+                    talent development activities, and participated
+                    in the planning, execution, and coordination
+                    of student activities in technology and competitions.
                 </p>
 
                 <div class="experience-tags">
@@ -932,9 +934,9 @@
 
                     <p class="section-description">
 
-                        Beberapa proyek Embedded System,
-                        IoT, Robotics dan Electrical Engineering
-                        yang pernah saya kembangkan.
+                        A selection of Embedded System,
+                        IoT, Robotics, and Electrical Engineering
+                        projects I have developed.
 
                     </p>
 
@@ -966,10 +968,10 @@
 
                             <p>
 
-                                Sistem monitoring dan kontrol
-                                nutrisi tanaman hidroponik
-                                menggunakan metode Fuzzy Logic
-                                berbasis Internet of Things.
+                                Monitoring and control system for
+                                hydroponic plant nutrients
+                                using a Fuzzy Logic method
+                                based on the Internet of Things.
 
                             </p>
 
@@ -1035,9 +1037,9 @@
 
                             <p>
 
-                                Sistem kendali kadar oksigen
-                                pada tambak udang dengan sumber
-                                energi fotovoltaik berbasis IoT.
+                                Oxygen level control system
+                                for shrimp ponds powered by
+                                IoT-based photovoltaic energy.
 
                             </p>
 
@@ -1103,9 +1105,9 @@
 
                             <p>
 
-                                Sistem monitoring parameter
-                                listrik tiga fasa menggunakan
-                                komunikasi LoRa berbasis IoT.
+                                Monitoring system for three-phase
+                                electrical parameters using
+                                IoT-based LoRa communication.
 
                             </p>
 
@@ -1171,10 +1173,10 @@
 
                             <p>
 
-                                Robot line tracer untuk
-                                penyortiran barang dengan
-                                QR Code sebagai sistem
-                                identifikasi target.
+                                A line tracer robot for
+                                sorting goods, using
+                                QR Code as the target
+                                identification system.
 
                             </p>
 
@@ -1240,10 +1242,9 @@
 
                             <p>
 
-                                Sistem pendeteksi kebocoran gas
-                                berbasis IoT untuk membantu
-                                monitoring kondisi secara
-                                real-time.
+                                An IoT-based gas leak detection
+                                system to support real-time
+                                condition monitoring.
 
                             </p>
 
@@ -1284,7 +1285,7 @@
 
                         <div class="project-image project-physics">
 
-                            <img src="project/gerak jatuh benda.jpg" alt="Gerak Jatuh Bebas">
+                            <img src="project/gerak jatuh benda.jpg" alt="Free-Fall Motion Experiment">
 
                             <span class="project-number">
                                 06
@@ -1305,9 +1306,9 @@
 
                             <p>
 
-                                Sistem eksperimen Gerak Jatuh
-                                Bebas dan Bidang Miring
-                                menggunakan Arduino Uno.
+                                An experiment system for Free-Fall
+                                Motion and Inclined-Plane Motion
+                                using an Arduino Uno.
 
                             </p>
 
@@ -1366,13 +1367,13 @@
 
                 <div class="gallery-intro">
                     <p>
-                        Dokumentasi aktivitas, pekerjaan lapangan, dan pengalaman engineering
-                        yang menjadi bagian dari perjalanan profesional saya.
+                        Documentation of activities, fieldwork, and engineering
+                        experiences that are part of my professional journey.
                     </p>
                 </div>
 
                 <div class="gallery-grid" id="activityGallery">
-                    <!-- Foto akan diambil otomatis dari folder "foto activity". -->
+                    <!-- Photos are loaded automatically from the "foto activity" folder. -->
                 </div>
 
             </div>
@@ -1423,9 +1424,9 @@
 
                         <p>
 
-                            Pengembangan sistem berbasis
-                            mikrokontroler dan integrasi
-                            hardware-software.
+                            Development of microcontroller-based
+                            systems and hardware-software
+                            integration.
 
                         </p>
 
@@ -1454,9 +1455,9 @@
 
                         <p>
 
-                            Pengembangan sistem monitoring,
-                            komunikasi perangkat dan integrasi
-                            sensor berbasis IoT.
+                            Development of monitoring systems,
+                            device communication, and IoT-based
+                            sensor integration.
 
                         </p>
 
@@ -1485,7 +1486,7 @@
                         <p>
 
                             Preventive maintenance, corrective
-                            maintenance, inspeksi dan
+                            maintenance, inspection, and
                             troubleshooting.
 
                         </p>
@@ -1514,9 +1515,9 @@
 
                         <p>
 
-                            Instrumentasi, pengukuran,
-                            sistem kontrol dasar dan
-                            penggunaan alat ukur listrik.
+                            Instrumentation, measurement,
+                            basic control systems, and
+                            use of electrical measuring instruments.
 
                         </p>
 
@@ -1543,8 +1544,8 @@
 
                         <p>
 
-                            Dasar sistem kelistrikan,
-                            elektronika, panel dan
+                            Fundamentals of electrical systems,
+                            electronics, panels, and
                             troubleshooting.
 
                         </p>
@@ -1573,9 +1574,9 @@
 
                         <p>
 
-                            Pemrograman mikrokontroler
-                            dan pengembangan firmware
-                            untuk sistem embedded.
+                            Microcontroller programming
+                            and firmware development
+                            for embedded systems.
 
                         </p>
 
@@ -1602,8 +1603,8 @@
 
                         <p>
 
-                            Perancangan rangkaian elektronika
-                            serta penggunaan tools engineering.
+                            Electronic circuit design
+                            and the use of engineering tools.
 
                         </p>
 
@@ -1632,7 +1633,7 @@
 
                             Problem solving, analytical thinking,
                             teamwork, communication,
-                            time management dan adaptability.
+                            time management, and adaptability.
 
                         </p>
 
@@ -1696,13 +1697,13 @@
                         </div>
 
                         <h3>
-                            Juara 2
+                            2nd Place
                         </h3>
 
                         <p>
-                            Lomba Inovasi Teknologi Tepat Guna
-                            Berbasis Otomasi tingkat
-                            Sulawesi Tengah.
+                            Central Sulawesi Regional Appropriate
+                            Technology Innovation Competition,
+                            Automation Category.
                         </p>
 
                     </div>
@@ -1719,12 +1720,12 @@
                         </div>
 
                         <h3>
-                            Kontes Robot Indonesia
+                            Indonesian Robot Contest
                         </h3>
 
                         <p>
-                            Ketua Tim Robot Sepak Bola Beroda
-                            dalam Kontes Robot Indonesia.
+                            Team Leader for the Wheeled Soccer Robot
+                            division at the Indonesian Robot Contest.
                         </p>
 
                     </div>
@@ -1741,12 +1742,12 @@
                         </div>
 
                         <h3>
-                            Juara 1
+                            1st Place
                         </h3>
 
                         <p>
-                            Juara 1 Tingkat Mahasiswa
-                            pada Palu Robot Contest.
+                            1st Place, Student Category
+                            at the Palu Robot Contest.
                         </p>
 
                     </div>
@@ -1779,12 +1780,12 @@
                 <div class="certification-grid">
                     <article class="certification-card">
                         <button class="certificate-image" type="button" data-certificate="sertifikat/skk-k3.jpg">
-                            <img src="sertifikat/skk-k3.jpg" alt="SKK Ahli Muda K3 Konstruksi" loading="lazy">
+                            <img src="sertifikat/skk-k3.jpg" alt="SKK Junior Expert in Construction Occupational Health & Safety (K3)" loading="lazy">
                             <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
                         </button>
                         <div class="certification-content">
                             <div class="certification-meta"><span>2026</span><i class="fa-solid fa-shield-halved"></i></div>
-                            <h3>SKK Ahli Muda K3 Konstruksi</h3>
+                            <h3>SKK Junior Expert in Construction K3</h3>
                             <p>Fresh Graduate</p>
                         </div>
                     </article>
@@ -1808,7 +1809,7 @@
                         </button>
                         <div class="certification-content">
                             <div class="certification-meta"><span>2026</span><i class="fa-solid fa-code"></i></div>
-                            <h3>Memulai Pemrograman dengan Python</h3>
+                            <h3>Getting Started with Python Programming</h3>
                             <p>Dicoding Indonesia</p>
                         </div>
                     </article>
@@ -1820,7 +1821,7 @@
                         </button>
                         <div class="certification-content">
                             <div class="certification-meta"><span>2026</span><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                            <h3>Program Magang Kementerian</h3>
+                            <h3>Ministry Internship Program</h3>
                             <p>Maintenance — Batch 2</p>
                         </div>
                     </article>
@@ -1832,7 +1833,7 @@
                         </button>
                         <div class="certification-content">
                             <div class="certification-meta"><span>2024</span><i class="fa-solid fa-trophy"></i></div>
-                            <h3>Program Magang Bersertifikat</h3>
+                            <h3>Certified Internship Program</h3>
                             <p>Wallacea Project / AMATI</p>
                         </div>
                     </article>
@@ -1844,7 +1845,7 @@
                         </button>
                         <div class="certification-content">
                             <div class="certification-meta"><span>2020</span><i class="fa-solid fa-tv"></i></div>
-                            <h3>Pelatihan Audio Video</h3>
+                            <h3>Audio Video Training</h3>
                             <p>PT Sharp Indonesia</p>
                         </div>
                     </article>
@@ -1883,9 +1884,9 @@
                         </h2>
 
                         <p>
-                            Terbuka untuk peluang kerja,
-                            project engineering, dan
-                            kolaborasi di bidang teknologi.
+                            Open to job opportunities,
+                            engineering projects, and
+                            collaboration in technology.
                         </p>
 
 
@@ -1941,9 +1942,9 @@
 
                         <p>
 
-                            Saya terbuka untuk peluang kerja,
-                            project engineering, kolaborasi,
-                            maupun diskusi mengenai teknologi.
+                            I'm open to job opportunities,
+                            engineering projects, collaboration,
+                            and discussions about technology.
 
                         </p>
 
@@ -2011,7 +2012,7 @@
                                 </span>
 
                                 <strong>
-                                    Palu, Sulawesi Tengah
+                                    Palu, Central Sulawesi
                                 </strong>
 
                             </div>
@@ -2317,7 +2318,7 @@
 
         const activityGallery = document.getElementById("activityGallery");
 
-        // Foto yang memang ada di folder: foto activity
+        // Photos that actually exist in the folder: foto activity
         const activityPhotos = [
             {
  src: "foto%20activity/electrical-maintenance.jpg",
@@ -2486,7 +2487,7 @@
 
 
                 const whatsappMessage =
-                    `Halo Wisnu, saya ${name}.
+                    `Hello Wisnu, my name is ${name}.
 
 Email: ${email}
 
