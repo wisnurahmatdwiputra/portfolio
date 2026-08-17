@@ -5818,26 +5818,24 @@ body.gallery-open {
    VERY SMALL PHONE
    ===================================================== */
 
-@media (max-width: 380px) {
-
-    .hero-container {
-        grid-template-columns: minmax(0, 1.55fr) minmax(95px, 0.65fr);
-        gap: 6px;
+@media (max-width: 768px) {
+    .engineering-profile {
+        width: 220px;
+        padding: 16px 14px;
+        border-radius: 16px;
     }
 
-    .hero h1 {
-        font-size: 29px;
+    .engineering-profile .profile-label {
+        font-size: 9px;
+        letter-spacing: 1.5px;
     }
 
-    .hero h2 {
-        font-size: 11px;
+    .engineering-profile h3 {
+        font-size: 16px;
+        margin: 6px 0;
     }
 
-    .hero-description {
-        font-size: 10px;
-    }
-
-    .engineering-card {
-        max-width: 110px;
+    .engineering-profile p {
+        font-size: 9px;
     }
 }
