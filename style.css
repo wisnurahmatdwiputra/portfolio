@@ -10757,46 +10757,56 @@ body.gallery-open {
 @media (max-width: 390px) {
 
     .hero-container {
-        grid-template-columns: minmax(0, 1fr) 110px !important;
-
-        gap: 8px !important;
-
-        padding-left: 11px !important;
-        padding-right: 11px !important;
+        grid-template-columns: minmax(0, 1fr) 125px !important;
+        gap: 12px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
-
 
     .hero-content h1 {
-        font-size: 23px !important;
+        font-size: 25px !important;
     }
-
 
     .hero-content h2 {
         font-size: 10px !important;
     }
 
-
     .hero-description {
-        font-size: 8px !important;
+        font-size: 8.5px !important;
+        line-height: 1.6;
     }
-
 
     .professional-profile {
-        max-width: 110px !important;
+        max-width: 125px !important;
     }
-
 
     .profile-frame {
-        height: 150px !important;
+        height: 175px !important;
     }
 
-
-    .hero-buttons a {
-        font-size: 7px !important;
-        padding-left: 5px !important;
-        padding-right: 5px !important;
+    .profile-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
     }
 
+    .profile-caption {
+        margin-top: 6px !important;
+        padding: 8px 5px !important;
+    }
+
+    .profile-caption span {
+        font-size: 6px !important;
+    }
+
+    .profile-caption strong {
+        font-size: 10px !important;
+    }
+
+    .profile-caption small {
+        font-size: 6px !important;
+    }
 }
 /* =====================================================
    PREMIUM ENGINEERING BACKGROUND
