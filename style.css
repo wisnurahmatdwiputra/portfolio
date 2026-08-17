@@ -5777,59 +5777,64 @@ body.gallery-open {
        PROFESSIONAL PROFILE
        ================================================= */
 
+@media (max-width: 768px) {
+
     .professional-profile {
-        width: 190px;
-        max-width: 100%;
-        padding: 12px;
-        margin: 0 auto;
-        box-sizing: border-box;
-        border-radius: 16px;
+        width: 190px !important;
+        max-width: 190px !important;
+        padding: 10px !important;
+        box-sizing: border-box !important;
     }
 
     .profile-frame {
-        width: 100%;
-        height: 210px;
-        margin: 0;
-        border-radius: 12px;
-        overflow: hidden;
-        box-sizing: border-box;
+        width: 100% !important;
+        height: 210px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
     }
 
     .profile-frame img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block !important;
     }
 
+    /* KOTAK SAMA PERSIS DENGAN FOTO */
     .profile-caption {
-        padding-top: 10px;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+
+        margin: 6px 0 0 0 !important;
+        padding: 7px 4px !important;
+
+        border-radius: 8px !important;
+
+        text-align: center !important;
     }
 
-    .profile-badges {
-        gap: 6px;
-        margin-top: 10px;
+    .profile-caption span {
+        display: block !important;
+        font-size: 5px !important;
+        letter-spacing: 0.8px !important;
+        line-height: 1.2 !important;
     }
 
-    .profile-badge {
-        padding: 7px 8px;
+    .profile-caption strong {
+        display: block !important;
+        font-size: 8px !important;
+        line-height: 1.2 !important;
+        margin-top: 3px !important;
     }
 
-    .professional-profile .profile-label {
-        font-size: 9px;
-        letter-spacing: 1.5px;
-    }
-
-    .professional-profile h3 {
-        font-size: 16px;
-        margin: 6px 0;
-    }
-
-    .professional-profile p {
-        font-size: 9px;
+    .profile-caption small {
+        display: block !important;
+        font-size: 5px !important;
+        line-height: 1.2 !important;
+        margin-top: 2px !important;
     }
 }
-
 
 /* =====================================================
    SMALL PHONE
