@@ -5170,4 +5170,352 @@ body.gallery-open {
     }
 
 }
+/* =========================================================
+   MOBILE HERO
+   DESKTOP-STYLE SIDE BY SIDE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    /* HERO */
+    .hero {
+        min-height: auto;
+        overflow: hidden;
+    }
+
+    .hero-container {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 125px !important;
+        gap: 10px !important;
+
+        align-items: center;
+
+        width: 100%;
+        max-width: 100%;
+
+        padding: 45px 14px 55px !important;
+        box-sizing: border-box;
+    }
+
+
+    /* =====================================================
+       LEFT SIDE
+       ===================================================== */
+
+    .hero-content {
+        min-width: 0;
+        width: 100%;
+    }
+
+
+    /* OPEN FOR OPPORTUNITIES */
+
+    .available {
+        display: inline-flex;
+        align-items: center;
+
+        font-size: 8px !important;
+        padding: 6px 9px !important;
+
+        border-radius: 20px;
+
+        white-space: nowrap;
+    }
+
+    .status-dot {
+        width: 6px !important;
+        height: 6px !important;
+        margin-right: 5px;
+    }
+
+
+    /* HELLO I'M */
+
+    .hero-small {
+        font-size: 8px !important;
+        letter-spacing: 2px !important;
+
+        margin-top: 25px !important;
+        margin-bottom: 7px !important;
+    }
+
+
+    /* NAME */
+
+    .hero-content h1 {
+        font-size: clamp(25px, 7.5vw, 31px) !important;
+        line-height: 0.98 !important;
+
+        letter-spacing: -1.5px;
+
+        margin: 0 0 16px !important;
+    }
+
+    .hero-content h1 span {
+        display: block;
+    }
+
+
+    /* =====================================================
+       TITLE
+       ===================================================== */
+
+    .hero-content h2 {
+        font-size: 11px !important;
+        line-height: 1.5 !important;
+
+        margin-bottom: 15px !important;
+
+        white-space: normal !important;
+    }
+
+    .hero-content h2 b {
+        margin: 0 2px;
+        color: var(--accent-color);
+    }
+
+
+    /* =====================================================
+       DESCRIPTION
+       ===================================================== */
+
+    .hero-description {
+        font-size: 9px !important;
+        line-height: 1.65 !important;
+
+        margin-bottom: 16px !important;
+    }
+
+
+    /* =====================================================
+       BUTTONS
+       Tetap horizontal seperti desktop
+       ===================================================== */
+
+    .hero-buttons {
+        display: grid !important;
+
+        grid-template-columns:
+            minmax(0, 1.25fr)
+            minmax(0, 0.9fr);
+
+        gap: 6px !important;
+
+        width: 100%;
+    }
+
+    .hero-buttons a {
+        min-width: 0 !important;
+
+        min-height: 39px !important;
+
+        padding: 8px 7px !important;
+
+        font-size: 8px !important;
+
+        border-radius: 8px !important;
+
+        white-space: nowrap;
+    }
+
+    /* View Projects */
+    .hero-buttons .btn-primary {
+        width: 100%;
+    }
+
+    /* Contact */
+    .hero-buttons .btn-secondary {
+        width: 100%;
+    }
+
+    /* View CV jadi full width baris kedua */
+    .hero-buttons a:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
+
+    /* =====================================================
+       SOCIAL
+       ===================================================== */
+
+    .social-links {
+        display: flex !important;
+
+        gap: 6px !important;
+
+        margin-top: 14px !important;
+    }
+
+    .social-links a {
+        width: 34px !important;
+        height: 34px !important;
+
+        border-radius: 8px !important;
+
+        font-size: 12px !important;
+    }
+
+
+    /* =====================================================
+       RIGHT SIDE
+       ===================================================== */
+
+    .hero-visual {
+        display: flex !important;
+
+        width: 100%;
+
+        min-width: 0;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .professional-profile {
+        width: 100% !important;
+        max-width: 125px !important;
+    }
+
+
+    /* =====================================================
+       PHOTO
+       ===================================================== */
+
+    .profile-frame {
+        width: 100% !important;
+
+        height: 170px !important;
+
+        border-radius: 18px !important;
+
+        overflow: hidden;
+    }
+
+    .profile-frame img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+
+    /* =====================================================
+       ENGINEERING PROFILE
+       ===================================================== */
+
+    .profile-caption {
+        margin-top: 7px !important;
+
+        padding: 10px 6px !important;
+
+        border-radius: 11px !important;
+
+        text-align: center;
+    }
+
+    .profile-caption span {
+        font-size: 6px !important;
+
+        letter-spacing: 1px !important;
+    }
+
+    .profile-caption strong {
+        display: block;
+
+        font-size: 9px !important;
+
+        margin-top: 4px;
+    }
+
+    .profile-caption small {
+        display: block;
+
+        font-size: 5.5px !important;
+
+        line-height: 1.4;
+
+        margin-top: 3px;
+    }
+
+
+    /* =====================================================
+       BADGES
+       ===================================================== */
+
+    .profile-badges {
+        display: flex !important;
+
+        gap: 4px !important;
+
+        margin-top: 6px !important;
+    }
+
+    .profile-badge {
+        padding: 5px 5px !important;
+
+        border-radius: 7px !important;
+
+        font-size: 5px !important;
+
+        gap: 3px !important;
+
+        white-space: nowrap;
+    }
+
+    .profile-badge i {
+        font-size: 6px !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+    .hero-container {
+        grid-template-columns: minmax(0, 1fr) 110px !important;
+
+        gap: 8px !important;
+
+        padding-left: 11px !important;
+        padding-right: 11px !important;
+    }
+
+
+    .hero-content h1 {
+        font-size: 23px !important;
+    }
+
+
+    .hero-content h2 {
+        font-size: 10px !important;
+    }
+
+
+    .hero-description {
+        font-size: 8px !important;
+    }
+
+
+    .professional-profile {
+        max-width: 110px !important;
+    }
+
+
+    .profile-frame {
+        height: 150px !important;
+    }
+
+
+    .hero-buttons a {
+        font-size: 7px !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+}
 
