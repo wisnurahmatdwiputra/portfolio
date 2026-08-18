@@ -729,10 +729,82 @@ body::before{
 }
 
 </style>
+
+
+<style id="preloader-i18n-styles">
+/* =========================================================
+   NEW FEATURE 8 -- PAGE PRELOADER
+   ========================================================= */
+#sitePreloader{
+    position:fixed; inset:0; z-index:999999;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:20px;
+    background:linear-gradient(180deg,#07111f,#06101d 100%);
+    transition:opacity .6s ease, visibility .6s ease;
+}
+#sitePreloader.preloader-hide{ opacity:0; visibility:hidden; pointer-events:none; }
+.preloader-mark{
+    font-family:"Space Grotesk", sans-serif;
+    font-size:34px; font-weight:700; letter-spacing:-.01em;
+    color:#f8fafc;
+    opacity:0; animation:preloaderFadeIn .7s ease forwards .1s;
+}
+.preloader-mark span{ color:#60a5fa; }
+.preloader-bar{
+    width:160px; height:2px; border-radius:2px;
+    background:rgba(148,163,184,.16); overflow:hidden;
+}
+.preloader-bar::after{
+    content:""; display:block; height:100%; width:40%;
+    background:linear-gradient(90deg,transparent,#3b82f6,#60a5fa,transparent);
+    animation:preloaderBarMove 1.1s ease-in-out infinite;
+}
+.preloader-label{
+    font-size:10px; letter-spacing:.22em; font-weight:700;
+    color:#64748b; text-transform:uppercase;
+    opacity:0; animation:preloaderFadeIn .7s ease forwards .25s;
+}
+@keyframes preloaderFadeIn{ from{opacity:0; transform:translateY(8px);} to{opacity:1; transform:translateY(0);} }
+@keyframes preloaderBarMove{ 0%{transform:translateX(-120%);} 100%{transform:translateX(320%);} }
+@media (prefers-reduced-motion: reduce){
+    #sitePreloader{ transition:opacity .2s linear; }
+    .preloader-mark, .preloader-label{ animation:none; opacity:1; }
+    .preloader-bar::after{ animation:none; width:100%; }
+}
+
+/* =========================================================
+   NEW FEATURE 9 -- ID / EN LANGUAGE TOGGLE
+   ========================================================= */
+.lang-toggle{
+    display:flex; align-items:center; gap:2px;
+    padding:3px; border:1px solid rgba(148,163,184,.16);
+    background:rgba(255,255,255,.03); border-radius:999px;
+    margin-left:10px;
+}
+.lang-toggle button{
+    appearance:none; -webkit-appearance:none; border:0; cursor:pointer;
+    background:transparent; color:#94a3b8;
+    font-family:inherit; font-size:11px; font-weight:700; letter-spacing:.03em;
+    padding:6px 12px; border-radius:999px; line-height:1;
+    transition:background .25s ease, color .25s ease;
+}
+.lang-toggle button.active{ background:#3b82f6; color:#07101f; }
+.lang-toggle button:not(.active):hover{ color:#e2e8f0; }
+@media (max-width:1000px){
+    .lang-toggle{ margin:16px 0 0; }
+}
+</style>
 </head>
 
 
 <body>
+
+    <!-- ================= PRELOADER ================= -->
+    <div id="sitePreloader" role="status" aria-live="polite" aria-label="Loading">
+        <div class="preloader-mark">WR<span>.</span></div>
+        <div class="preloader-bar"></div>
+        <p class="preloader-label" data-lang-id="Memuat Portofolio">Loading Portfolio</p>
+    </div>
 
     <!-- ================= NAVBAR ================= -->
 
@@ -746,22 +818,27 @@ body::before{
 
             <nav class="nav-menu">
 
-                <a href="#home" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#campus-experience">Campus</a>
-                <a href="#projects">Projects</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#skills">Skills</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" class="active" data-lang-id="Beranda">Home</a>
+                <a href="#about" data-lang-id="Tentang">About</a>
+                <a href="#experience" data-lang-id="Pengalaman">Experience</a>
+                <a href="#campus-experience" data-lang-id="Kampus">Campus</a>
+                <a href="#projects" data-lang-id="Proyek">Projects</a>
+                <a href="#gallery" data-lang-id="Galeri">Gallery</a>
+                <a href="#skills" data-lang-id="Keahlian">Skills</a>
+                <a href="#achievements" data-lang-id="Prestasi">Achievements</a>
+                <a href="#contact" data-lang-id="Kontak">Contact</a>
 
             </nav>
 
-            <a href="#contact" class="nav-button">
+            <a href="#contact" class="nav-button" data-lang-id="Hubungi Saya &lt;i class=&quot;fa-solid fa-arrow-right&quot;&gt;&lt;/i&gt;">
                 Let's Talk
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
+
+            <div class="lang-toggle" role="group" aria-label="Language selector">
+                <button type="button" class="lang-btn active" data-lang="en">EN</button>
+                <button type="button" class="lang-btn" data-lang="id">ID</button>
+            </div>
 
             <button class="menu-toggle" id="menuToggle">
                 <i class="fa-solid fa-bars"></i>
@@ -786,7 +863,7 @@ body::before{
 
                 <div class="hero-content">
 
-                    <div class="available">
+                    <div class="available" data-lang-id="Terbuka untuk peluang kerja">
 
                         <span class="status-dot"></span>
 
@@ -795,7 +872,7 @@ body::before{
                     </div>
 
 
-                    <p class="hero-small">
+                    <p class="hero-small" data-lang-id="HALO, SAYA">
                         HELLO, I'M
                     </p>
 
@@ -806,7 +883,7 @@ body::before{
                     </h1>
 
 
-                    <h2>
+                    <h2 data-lang-id="Insinyur Elektro <b>|</b> Embedded System <b>|</b> IoT">
                         Electrical Engineer
                         <b>|</b>
                         Embedded System
@@ -815,7 +892,7 @@ body::before{
                     </h2>
 
 
-                    <p class="hero-description">
+                    <p class="hero-description" data-lang-id="Lulusan Sarjana Teknik Elektro dari Universitas Tadulako dengan keahlian di bidang Embedded Systems, Internet of Things, Maintenance, Instrumentasi, dan sistem kontrol.">
 
                         Bachelor's graduate in Electrical Engineering from
                         Universitas Tadulako with expertise in Embedded Systems,
@@ -827,24 +904,24 @@ body::before{
 
                     <div class="hero-buttons">
                         <a href="#projects" class="btn-primary">
-                            <span>View My Projects</span>
+                            <span data-lang-id="Lihat Proyek Saya">View My Projects</span>
                             <span>→</span>
                         </a>
 
                         <a href="#contact" class="btn-secondary">
-                            Contact Me
+                            <span data-lang-id="Hubungi Saya">Contact Me</span>
                         </a>
 
                         <a href="Wisnu Rahmat Dwi Putra 2026 CV.pdf"
                         target="_blank"
                         class="btn-secondary">
-                            <span>View CV</span>
+                            <span data-lang-id="Lihat CV">View CV</span>
                             <span>↗</span>
                         </a>
 
                         <button type="button" id="sharePortfolioBtn" class="btn-secondary btn-share">
                             <i class="fa-solid fa-share-nodes"></i>
-                            <span>Share Portfolio</span>
+                            <span data-lang-id="Bagikan Portofolio">Share Portfolio</span>
                         </button>
                     </div>
 
@@ -892,15 +969,15 @@ body::before{
                         </div>
 
                         <div class="profile-caption">
-                            <span>ENGINEERING PROFILE</span>
-                            <strong>Electrical Engineer</strong>
-                            <small>Embedded System • IoT • Automation</small>
+                            <span data-lang-id="PROFIL TEKNIK">ENGINEERING PROFILE</span>
+                            <strong data-lang-id="Insinyur Elektro">Electrical Engineer</strong>
+                            <small data-lang-id="Embedded System • IoT • Otomasi">Embedded System • IoT • Automation</small>
                         </div>
 
                         <div class="profile-badges">
                             <div class="profile-badge">
                                 <i class="fa-solid fa-microchip"></i>
-                                <span>Embedded & IoT</span>
+                                <span data-lang-id="Embedded &amp; IoT">Embedded & IoT</span>
                             </div>
 
                             <div class="profile-badge">
@@ -931,11 +1008,11 @@ body::before{
 
                     <div>
 
-                        <p class="section-label">
+                        <p class="section-label" data-lang-id="TENTANG SAYA">
                             ABOUT ME
                         </p>
 
-                        <h2>
+                        <h2 data-lang-id="Rekayasa dengan <span>Tujuan.</span>">
                             Engineering with
                             <span>Purpose.</span>
                         </h2>
@@ -949,7 +1026,7 @@ body::before{
 
                     <div class="about-text">
 
-                        <p class="lead">
+                        <p class="lead" data-lang-id="Saya lulusan <strong>Teknik Elektro Universitas Tadulako</strong> dengan fokus pada Embedded Systems, Internet of Things, Maintenance, dan Instrumentasi.">
 
                             I am a graduate of
                             <strong>Electrical Engineering at Universitas
@@ -961,7 +1038,7 @@ body::before{
                         </p>
 
 
-                        <p>
+                        <p data-lang-id="Saya memiliki pengalaman langsung dalam mengembangkan sistem berbasis mikrokontroler, integrasi sensor, pemrograman C/C++, komunikasi IoT, pengujian, dan troubleshooting.">
 
                             I have hands-on experience in
                             developing microcontroller-based
@@ -972,7 +1049,7 @@ body::before{
                         </p>
 
 
-                        <p>
+                        <p data-lang-id="Saya juga memiliki pengalaman dalam preventive dan corrective maintenance, instalasi dan perawatan CCTV, troubleshooting sistem kelistrikan, dan inspeksi peralatan.">
 
                             I also have experience in
                             preventive and corrective maintenance,
@@ -987,7 +1064,7 @@ body::before{
 
                             <div>
 
-                                <span>
+                                <span data-lang-id="Pendidikan">
                                     Education
                                 </span>
 
@@ -1000,7 +1077,7 @@ body::before{
 
                             <div>
 
-                                <span>
+                                <span data-lang-id="Universitas">
                                     University
                                 </span>
 
@@ -1013,7 +1090,7 @@ body::before{
 
                             <div>
 
-                                <span>
+                                <span data-lang-id="IPK">
                                     GPA
                                 </span>
 
@@ -1026,7 +1103,7 @@ body::before{
 
                             <div>
 
-                                <span>
+                                <span data-lang-id="Lokasi">
                                     Location
                                 </span>
 
@@ -1051,7 +1128,7 @@ body::before{
                                 7+
                             </strong>
 
-                            <span>
+                            <span data-lang-id="Proyek<br>Rekayasa">
                                 Engineering<br>
                                 Projects
                             </span>
@@ -1065,7 +1142,7 @@ body::before{
                                 3
                             </strong>
 
-                            <span>
+                            <span data-lang-id="Prestasi<br>Robotika">
                                 Robotics<br>
                                 Achievements
                             </span>
@@ -1079,7 +1156,7 @@ body::before{
                                 3.37
                             </strong>
 
-                            <span>
+                            <span data-lang-id="IPK<br>/ 4.00">
                                 GPA<br>
                                 / 4.00
                             </span>
@@ -1093,7 +1170,7 @@ body::before{
                                 K3
                             </strong>
 
-                            <span>
+                            <span data-lang-id="Sertifikasi<br>Konstruksi">
                                 Construction<br>
                                 Certification
                             </span>
@@ -1118,8 +1195,8 @@ body::before{
         <div class="section-number">03</div>
 
         <div>
-            <span class="section-label">EXPERIENCE</span>
-            <h2>Professional Journey<span>.</span></h2>
+            <span class="section-label" data-lang-id="PENGALAMAN">EXPERIENCE</span>
+            <h2 data-lang-id="Perjalanan Profesional<span>.</span>">Professional Journey<span>.</span></h2>
         </div>
     </div>
 
@@ -1144,15 +1221,15 @@ body::before{
 
             <div class="experience-content">
 
-                <span class="experience-type">
+                <span class="experience-type" data-lang-id="TEKNISI ELEKTRONIKA">
                     ELECTRONIC TECHNICIAN
                 </span>
 
                 <h3>PT Ayodya Dialog Semesta</h3>
 
-                <h4>Electronic Technician</h4>
+                <h4 data-lang-id="Teknisi Elektronika">Electronic Technician</h4>
 
-                <p>
+                <p data-lang-id="Melakukan instalasi, pemeliharaan preventif, dan perbaikan sistem CCTV untuk armada truk tangki. Melaksanakan inspeksi, pengujian, dan troubleshooting kamera, pengkabelan, konektor, dan sistem kelistrikan kendaraan.">
                     Performed installation, preventive maintenance, and
                     repair of CCTV systems for a fleet of tanker trucks.
                     Carried out inspection, testing, and troubleshooting of cameras,
@@ -1187,15 +1264,15 @@ body::before{
 
             <div class="experience-content">
 
-                <span class="experience-type">
+                <span class="experience-type" data-lang-id="PEMELIHARAAN">
                     MAINTENANCE
                 </span>
 
                 <h3>SSC Works</h3>
 
-                <h4>General Maintenance — Ministry Internship Batch 2</h4>
+                <h4 data-lang-id="Pemeliharaan Umum — Magang Kementerian Batch 2">General Maintenance — Ministry Internship Batch 2</h4>
 
-                <p>
+                <p data-lang-id="Melaksanakan pemeliharaan preventif dan korektif pada sistem kelistrikan, mesin, CCTV, panel listrik, dan fasilitas bengkel. Melakukan troubleshooting, inspeksi berkala, dan mendukung pemasangan panel listrik sesuai standar SOP dan K3.">
                     Carried out preventive and corrective maintenance
                     on electrical systems, machinery, CCTV, electrical panels,
                     and workshop facilities. Performed troubleshooting,
@@ -1231,7 +1308,7 @@ body::before{
 
             <div class="experience-content">
 
-                <span class="experience-type">
+                <span class="experience-type" data-lang-id="FREELANCE • EMBEDDED SYSTEM">
                     FREELANCE • EMBEDDED SYSTEM
                 </span>
 
@@ -1239,7 +1316,7 @@ body::before{
 
                 <h4>Embedded System & IoT</h4>
 
-                <p>
+                <p data-lang-id="Merancang dan mengembangkan sistem berbasis Internet of Things (IoT), mengembangkan firmware, melakukan integrasi hardware-software, membangun prototipe, serta melaksanakan pengujian dan validasi sistem.">
                     Designed and developed Internet of Things (IoT)
                     based systems, developed firmware, performed
                     hardware-software integration, built prototypes,
@@ -1250,7 +1327,7 @@ body::before{
 
                     <div class="project-mini">
                         <strong>Hydroponic Monitoring</strong>
-                        <span>
+                        <span data-lang-id="Monitoring nutrisi tanaman menggunakan Fuzzy Logic berbasis IoT.">
                             Plant nutrient monitoring using
                             IoT-based Fuzzy Logic.
                         </span>
@@ -1258,7 +1335,7 @@ body::before{
 
                     <div class="project-mini">
                         <strong>Smart Shrimp Pond</strong>
-                        <span>
+                        <span data-lang-id="Sistem kontrol kadar oksigen untuk tambak udang, didukung IoT dan energi fotovoltaik.">
                             Oxygen level control system for shrimp ponds,
                             powered by IoT and photovoltaic energy.
                         </span>
@@ -1266,7 +1343,7 @@ body::before{
 
                     <div class="project-mini">
                         <strong>3-Phase Electrical Monitoring</strong>
-                        <span>
+                        <span data-lang-id="Monitoring daya tiga fase menggunakan komunikasi LoRa berbasis IoT.">
                             Three-phase power monitoring using
                             IoT-based LoRa communication.
                         </span>
@@ -1274,14 +1351,14 @@ body::before{
 
                     <div class="project-mini">
                         <strong>Gas Leak Detector</strong>
-                        <span>
+                        <span data-lang-id="Sistem deteksi kebocoran gas berbasis IoT.">
                             IoT-based gas leak detection system.
                         </span>
                     </div>
 
                     <div class="project-mini">
                         <strong>Physics Experiment System</strong>
-                        <span>
+                        <span data-lang-id="Sistem eksperimen gerak jatuh bebas dan gerak bidang miring berbasis Arduino Uno.">
                             Free-fall and inclined-plane motion experiment
                             system based on Arduino Uno.
                         </span>
@@ -1319,15 +1396,15 @@ body::before{
 
             <div class="experience-content">
 
-                <span class="experience-type">
+                <span class="experience-type" data-lang-id="MAGANG BERSERTIFIKAT">
                     CERTIFIED INTERNSHIP
                 </span>
 
                 <h3>PT Agraria Indonesia Berdaya</h3>
 
-                <h4>Certified Internship Program</h4>
+                <h4 data-lang-id="Program Magang Bersertifikat">Certified Internship Program</h4>
 
-                <p>
+                <p data-lang-id="Berpartisipasi dalam proyek pengelolaan lahan dan lingkungan berkelanjutan, pengolahan sampah organik menjadi kompos, serta pengembangan dan instalasi sistem akuaponik yang mengintegrasikan budidaya ikan dan tanaman.">
                     Took part in sustainable land and environmental
                     management projects, organic waste processing
                     into compost, as well as the development and installation
@@ -1363,7 +1440,7 @@ body::before{
 
             <div class="experience-content">
 
-                <span class="experience-type">
+                <span class="experience-type" data-lang-id="PELATIHAN IOT ENGINEER">
                     IOT ENGINEER CAMP
                 </span>
 
@@ -1371,7 +1448,7 @@ body::before{
 
                 <h4>IoT Engineer</h4>
 
-                <p>
+                <p data-lang-id="Mengembangkan sistem Internet of Things melalui pembuatan prototipe, integrasi sensor, pemrograman mikrokontroler, dan pengembangan sistem monitoring menggunakan protokol MQTT.">
                     Developed Internet of Things systems through
                     prototype building, sensor integration, microcontroller
                     programming, and monitoring system development
@@ -1407,15 +1484,15 @@ body::before{
 
             <div class="experience-content">
 
-                <span class="experience-type">
+                <span class="experience-type" data-lang-id="MAGANG">
                     INTERNSHIP
                 </span>
 
                 <h3>PT Sharp Electronics</h3>
 
-                <h4>Field Work Practice</h4>
+                <h4 data-lang-id="Praktik Kerja Lapangan">Field Work Practice</h4>
 
-                <p>
+                <p data-lang-id="Membantu pemeliharaan dan pengujian sistem elektronik dan peralatan rumah tangga. Melakukan troubleshooting dan diagnostik untuk mengidentifikasi kerusakan pada perangkat elektronik, serta mendukung proses quality control untuk memastikan keandalan produk.">
                     Assisted with the maintenance and testing of electronic
                     systems and home appliances. Performed troubleshooting
                     and diagnostics to identify faults in
@@ -1444,11 +1521,11 @@ body::before{
                     <div class="section-heading-left">
                         <span class="section-number">04</span>
                         <div>
-                            <p class="section-label">CAMPUS EXPERIENCE</p>
-                            <h2>University & <span>Leadership.</span></h2>
+                            <p class="section-label" data-lang-id="PENGALAMAN KAMPUS">CAMPUS EXPERIENCE</p>
+                            <h2 data-lang-id="Kampus &amp; <span>Kepemimpinan.</span>">University & <span>Leadership.</span></h2>
                         </div>
                     </div>
-                    <p class="section-description">
+                    <p class="section-description" data-lang-id="Pengalaman akademik, organisasi, dan kepemimpinan yang diperoleh selama menempuh studi di Universitas Tadulako.">
                         Academic, organizational, and leadership experience gained during my studies at Universitas Tadulako.
                     </p>
                 </div>
@@ -1469,15 +1546,15 @@ body::before{
 
             <div class="experience-content">
 
-                <span class="experience-type">
+                <span class="experience-type" data-lang-id="PENGALAMAN AKADEMIK">
                     ACADEMIC EXPERIENCE
                 </span>
 
                 <h3>Microcontroller & Microprocessor Laboratory</h3>
 
-                <h4>Laboratory Assistant</h4>
+                <h4 data-lang-id="Asisten Laboratorium">Laboratory Assistant</h4>
 
-                <p>
+                <p data-lang-id="Membantu dosen dalam pelaksanaan praktikum mikrokontroler dan mikroprosesor. Membimbing mahasiswa dalam penggunaan mikrokontroler dan pemrograman dasar embedded system, serta membantu pengujian perangkat keras dan rangkaian elektronik.">
                     Assisted lecturers in conducting microcontroller
                     and microprocessor lab sessions. Guided students
                     in the use of microcontrollers and basic embedded
@@ -1509,15 +1586,15 @@ body::before{
 
             <div class="experience-content">
 
-                <span class="experience-type">
+                <span class="experience-type" data-lang-id="KEPEMIMPINAN">
                     LEADERSHIP
                 </span>
 
                 <h3>Robotech Tadulako</h3>
 
-                <h4>General Chairman</h4>
+                <h4 data-lang-id="Ketua Umum">General Chairman</h4>
 
-                <p>
+                <p data-lang-id="Memimpin dan mengoordinasikan kegiatan organisasi robotika mahasiswa, termasuk persiapan teknis dan manajemen tim untuk kompetisi robotika tingkat nasional. Berhasil membawa tim Robotech Tadulako lolos dan berkompetisi di kontes robot nasional di Semarang pada tahun 2023.">
                     Led and coordinated the activities of a student
                     robotics organization, including technical preparation and
                     team management for national-level robotics competitions.
@@ -1550,15 +1627,15 @@ body::before{
 
             <div class="experience-content">
 
-                <span class="experience-type">
+                <span class="experience-type" data-lang-id="ORGANISASI">
                     ORGANIZATION
                 </span>
 
                 <h3>Himpunan Mahasiswa Elektro</h3>
 
-                <h4>Interests & Talents Division Staff</h4>
+                <h4 data-lang-id="Staf Divisi Minat &amp; Bakat">Interests & Talents Division Staff</h4>
 
-                <p>
+                <p data-lang-id="Mendukung penyelenggaraan kegiatan pengembangan minat dan bakat mahasiswa, serta berpartisipasi dalam perencanaan, pelaksanaan, dan koordinasi kegiatan mahasiswa di bidang teknologi dan kompetisi.">
                     Supported the organization of student interest and
                     talent development activities, and participated
                     in the planning, execution, and coordination
@@ -1595,11 +1672,11 @@ body::before{
 
                         <div>
 
-                            <p class="section-label">
+                            <p class="section-label" data-lang-id="SOROTAN PROYEK">
                                 PROJECT HIGHLIGHTS
                             </p>
 
-                            <h2>
+                            <h2 data-lang-id="Proyek <span>Unggulan.</span>">
                                 Featured
                                 <span>Projects.</span>
                             </h2>
@@ -1609,7 +1686,7 @@ body::before{
                     </div>
 
 
-                    <p class="section-description">
+                    <p class="section-description" data-lang-id="Kumpulan proyek Embedded System, IoT, Robotika, dan Teknik Elektro yang telah saya kembangkan.">
 
                         A selection of Embedded System,
                         IoT, Robotics, and Electrical Engineering
@@ -1643,7 +1720,7 @@ body::before{
                                 Hydroponic Nutrient Monitoring
                             </h3>
 
-                            <p>
+                            <p data-lang-id="Sistem pemantauan dan kontrol nutrisi tanaman hidroponik menggunakan metode Fuzzy Logic berbasis Internet of Things.">
 
                                 Monitoring and control system for
                                 hydroponic plant nutrients
@@ -1676,7 +1753,7 @@ body::before{
 
                             <a href="#" class="project-link">
 
-                                View Project
+                                <span data-lang-id="Lihat Proyek">View Project</span>
 
                                 <i class="fa-solid fa-arrow-right"></i>
 
@@ -1712,7 +1789,7 @@ body::before{
                                 Smart Oxygen Control
                             </h3>
 
-                            <p>
+                            <p data-lang-id="Sistem kontrol kadar oksigen untuk tambak udang yang didukung energi fotovoltaik berbasis IoT.">
 
                                 Oxygen level control system
                                 for shrimp ponds powered by
@@ -1744,7 +1821,7 @@ body::before{
 
                             <a href="#" class="project-link">
 
-                                View Project
+                                <span data-lang-id="Lihat Proyek">View Project</span>
 
                                 <i class="fa-solid fa-arrow-right"></i>
 
@@ -1780,7 +1857,7 @@ body::before{
                                 3-Phase Electrical Monitoring
                             </h3>
 
-                            <p>
+                            <p data-lang-id="Sistem pemantauan parameter kelistrikan tiga fase menggunakan komunikasi LoRa berbasis IoT.">
 
                                 Monitoring system for three-phase
                                 electrical parameters using
@@ -1812,7 +1889,7 @@ body::before{
 
                             <a href="#" class="project-link">
 
-                                View Project
+                                <span data-lang-id="Lihat Proyek">View Project</span>
 
                                 <i class="fa-solid fa-arrow-right"></i>
 
@@ -1881,7 +1958,7 @@ body::before{
 
                             <a href="#" class="project-link">
 
-                                View Project
+                                <span data-lang-id="Lihat Proyek">View Project</span>
 
                                 <i class="fa-solid fa-arrow-right"></i>
 
@@ -1917,7 +1994,7 @@ body::before{
                                 Gas Leak Detector
                             </h3>
 
-                            <p>
+                            <p data-lang-id="Sistem deteksi kebocoran gas berbasis IoT untuk mendukung pemantauan kondisi secara real-time.">
 
                                 An IoT-based gas leak detection
                                 system to support real-time
@@ -1945,7 +2022,7 @@ body::before{
 
                             <a href="#" class="project-link">
 
-                                View Project
+                                <span data-lang-id="Lihat Proyek">View Project</span>
 
                                 <i class="fa-solid fa-arrow-right"></i>
 
@@ -1981,7 +2058,7 @@ body::before{
                                 Physics Experiment System
                             </h3>
 
-                            <p>
+                            <p data-lang-id="Sistem eksperimen Gerak Jatuh Bebas dan Gerak Bidang Miring menggunakan Arduino Uno.">
 
                                 An experiment system for Free-Fall
                                 Motion and Inclined-Plane Motion
@@ -2009,7 +2086,7 @@ body::before{
 
                             <a href="#" class="project-link">
 
-                                View Project
+                                <span data-lang-id="Lihat Proyek">View Project</span>
 
                                 <i class="fa-solid fa-arrow-right"></i>
 
@@ -2036,7 +2113,7 @@ body::before{
 
                             <h3>Human Stress Level Detection</h3>
 
-                            <p>
+                            <p data-lang-id="Sistem berbasis web server untuk mendeteksi tingkat stres manusia menggunakan metode K-Nearest Neighbor (KNN).">
                                 A web-server-based system for detecting
                                 human stress levels using the
                                 K-Nearest Neighbor (KNN) method.
@@ -2050,7 +2127,7 @@ body::before{
                             </div>
 
                             <a href="#" class="project-link">
-                                View Project
+                                <span data-lang-id="Lihat Proyek">View Project</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
@@ -2074,7 +2151,7 @@ body::before{
 
                             <h3>PLTB Trainer Output Monitoring</h3>
 
-                            <p>
+                            <p data-lang-id="Perancangan dan pengembangan sistem monitoring untuk mengukur dan mengamati parameter output trainer PLTB.">
                                 Design and development of a monitoring
                                 system for measuring and observing the
                                 output parameters of a PLTB trainer.
@@ -2088,7 +2165,7 @@ body::before{
                             </div>
 
                             <a href="#" class="project-link">
-                                View Project
+                                <span data-lang-id="Lihat Proyek">View Project</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
@@ -2112,7 +2189,7 @@ body::before{
 
                             <h3>Smart Aquarium Monitoring</h3>
 
-                            <p>
+                            <p data-lang-id="Sistem monitoring akuarium menggunakan Fuzzy Logic untuk mengolah parameter lingkungan dan mendukung kontrol cerdas.">
                                 An aquarium monitoring system using
                                 Fuzzy Logic to process environmental
                                 parameters and support intelligent control.
@@ -2126,7 +2203,7 @@ body::before{
                             </div>
 
                             <a href="#" class="project-link">
-                                View Project
+                                <span data-lang-id="Lihat Proyek">View Project</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
@@ -2151,14 +2228,14 @@ body::before{
                     <span class="section-number">06</span>
 
                     <div>
-                        <p class="section-label">GALLERY</p>
+                        <p class="section-label" data-lang-id="GALERI">GALLERY</p>
 
-                        <h2>Professional <span>Moments.</span></h2>
+                        <h2 data-lang-id="Momen <span>Profesional.</span>">Professional <span>Moments.</span></h2>
                     </div>
                 </div>
 
                 <div class="gallery-intro">
-                    <p>
+                    <p data-lang-id="Dokumentasi kegiatan, pekerjaan lapangan, dan pengalaman teknik yang menjadi bagian dari perjalanan profesional saya.">
                         Documentation of activities, fieldwork, and engineering
                         experiences that are part of my professional journey.
                     </p>
@@ -2185,11 +2262,11 @@ body::before{
 
                     <div>
 
-                        <p class="section-label">
+                        <p class="section-label" data-lang-id="KEAHLIAN TEKNIS">
                             TECHNICAL EXPERTISE
                         </p>
 
-                        <h2>
+                        <h2 data-lang-id="Keahlian &amp; <span>Kompetensi.</span>">
                             Skills &
                             <span>Competencies.</span>
                         </h2>
@@ -2212,7 +2289,7 @@ body::before{
                             Embedded System
                         </h3>
 
-                        <p>
+                        <p data-lang-id="Pengembangan sistem berbasis mikrokontroler dan integrasi hardware-software.">
 
                             Development of microcontroller-based
                             systems and hardware-software
@@ -2243,7 +2320,7 @@ body::before{
                             Internet of Things
                         </h3>
 
-                        <p>
+                        <p data-lang-id="Pengembangan sistem monitoring, komunikasi perangkat, dan integrasi sensor berbasis IoT.">
 
                             Development of monitoring systems,
                             device communication, and IoT-based
@@ -2269,11 +2346,11 @@ body::before{
                             <i class="fa-solid fa-screwdriver-wrench"></i>
                         </div>
 
-                        <h3>
+                        <h3 data-lang-id="Pemeliharaan">
                             Maintenance
                         </h3>
 
-                        <p>
+                        <p data-lang-id="Pemeliharaan preventif, pemeliharaan korektif, inspeksi, dan troubleshooting.">
 
                             Preventive maintenance, corrective
                             maintenance, inspection, and
@@ -2299,11 +2376,11 @@ body::before{
                             <i class="fa-solid fa-gauge-high"></i>
                         </div>
 
-                        <h3>
+                        <h3 data-lang-id="Instrumentasi">
                             Instrumentation
                         </h3>
 
-                        <p>
+                        <p data-lang-id="Instrumentasi, pengukuran, sistem kontrol dasar, dan penggunaan alat ukur listrik.">
 
                             Instrumentation, measurement,
                             basic control systems, and
@@ -2328,11 +2405,11 @@ body::before{
                             <i class="fa-solid fa-bolt"></i>
                         </div>
 
-                        <h3>
+                        <h3 data-lang-id="Teknik Elektro">
                             Electrical Engineering
                         </h3>
 
-                        <p>
+                        <p data-lang-id="Dasar-dasar sistem kelistrikan, elektronika, panel, dan troubleshooting.">
 
                             Fundamentals of electrical systems,
                             electronics, panels, and
@@ -2358,11 +2435,11 @@ body::before{
                             <i class="fa-solid fa-code"></i>
                         </div>
 
-                        <h3>
+                        <h3 data-lang-id="Pemrograman">
                             Programming
                         </h3>
 
-                        <p>
+                        <p data-lang-id="Pemrograman mikrokontroler dan pengembangan firmware untuk embedded system.">
 
                             Microcontroller programming
                             and firmware development
@@ -2387,11 +2464,11 @@ body::before{
                             <i class="fa-solid fa-drafting-compass"></i>
                         </div>
 
-                        <h3>
+                        <h3 data-lang-id="Alat Rekayasa">
                             Engineering Tools
                         </h3>
 
-                        <p>
+                        <p data-lang-id="Perancangan rangkaian elektronik dan penggunaan alat bantu rekayasa.">
 
                             Electronic circuit design
                             and the use of engineering tools.
@@ -2419,7 +2496,7 @@ body::before{
                             Soft Skills
                         </h3>
 
-                        <p>
+                        <p data-lang-id="Pemecahan masalah, berpikir analitis, kerja sama tim, komunikasi, manajemen waktu, dan adaptabilitas.">
 
                             Problem solving, analytical thinking,
                             teamwork, communication,
@@ -2459,11 +2536,11 @@ body::before{
 
                     <div>
 
-                        <p class="section-label">
+                        <p class="section-label" data-lang-id="PRESTASI">
                             ACHIEVEMENTS
                         </p>
 
-                        <h2>
+                        <h2 data-lang-id="Penghargaan &amp; <span>Prestasi.</span>">
                             Awards &
                             <span>Achievements.</span>
                         </h2>
@@ -2486,11 +2563,11 @@ body::before{
                             <i class="fa-solid fa-trophy"></i>
                         </div>
 
-                        <h3>
+                        <h3 data-lang-id="Juara 2">
                             2nd Place
                         </h3>
 
-                        <p>
+                        <p data-lang-id="Kompetisi Inovasi Teknologi Tepat Guna Tingkat Wilayah Sulawesi Tengah, Kategori Otomasi.">
                             Central Sulawesi Regional Appropriate
                             Technology Innovation Competition,
                             Automation Category.
@@ -2513,7 +2590,7 @@ body::before{
                             Indonesian Robot Contest
                         </h3>
 
-                        <p>
+                        <p data-lang-id="Ketua Tim untuk divisi Wheeled Soccer Robot pada Kontes Robot Indonesia.">
                             Team Leader for the Wheeled Soccer Robot
                             division at the Indonesian Robot Contest.
                         </p>
@@ -2531,11 +2608,11 @@ body::before{
                             <i class="fa-solid fa-medal"></i>
                         </div>
 
-                        <h3>
+                        <h3 data-lang-id="Juara 1">
                             1st Place
                         </h3>
 
-                        <p>
+                        <p data-lang-id="Juara 1 Kategori Pelajar pada Kontes Robot Palu.">
                             1st Place, Student Category
                             at the Palu Robot Contest.
                         </p>
@@ -2555,13 +2632,13 @@ body::before{
                 <div class="section-heading">
                     <span class="section-number">09</span>
                     <div>
-                        <p class="section-label">CERTIFICATIONS</p>
-                        <h2>Training & <span>Certification.</span></h2>
+                        <p class="section-label" data-lang-id="SERTIFIKASI">CERTIFICATIONS</p>
+                        <h2 data-lang-id="Pelatihan &amp; <span>Sertifikasi.</span>">Training & <span>Certification.</span></h2>
                     </div>
                 </div>
 
                 <div class="certification-intro">
-                    <p>
+                    <p data-lang-id="Sertifikasi profesional, program pelatihan, dan kualifikasi teknis yang mendukung keahlian rekayasa saya.">
                         Professional certifications, training programs, and technical qualifications
                         supporting my engineering expertise.
                     </p>
@@ -2571,7 +2648,7 @@ body::before{
                     <article class="certification-card">
                         <button class="certificate-image" type="button" data-certificate="sertifikat/skk-k3.jpg">
                             <img src="sertifikat/skk-k3.jpg" alt="SKK Junior Expert in Construction Occupational Health & Safety (K3)" loading="lazy">
-                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> <span data-lang-id="Lihat Sertifikat">View Certificate</span></span>
                         </button>
                         <div class="certification-content">
                             <div class="certification-meta"><span>2026</span><i class="fa-solid fa-shield-halved"></i></div>
@@ -2583,7 +2660,7 @@ body::before{
                     <article class="certification-card">
                         <button class="certificate-image" type="button" data-certificate="sertifikat/iot-msib.jpg">
                             <img src="sertifikat/iot-msib.jpg" alt="IoT Engineer MSIB Certificate" loading="lazy">
-                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> <span data-lang-id="Lihat Sertifikat">View Certificate</span></span>
                         </button>
                         <div class="certification-content">
                             <div class="certification-meta"><span>2023</span><i class="fa-solid fa-wifi"></i></div>
@@ -2595,7 +2672,7 @@ body::before{
                     <article class="certification-card">
                         <button class="certificate-image" type="button" data-certificate="sertifikat/python.jpg">
                             <img src="sertifikat/python.jpg" alt="Python Programming Certificate" loading="lazy">
-                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> <span data-lang-id="Lihat Sertifikat">View Certificate</span></span>
                         </button>
                         <div class="certification-content">
                             <div class="certification-meta"><span>2026</span><i class="fa-solid fa-code"></i></div>
@@ -2607,11 +2684,11 @@ body::before{
                     <article class="certification-card">
                         <button class="certificate-image" type="button" data-certificate="sertifikat/maintenance.jpg">
                             <img src="sertifikat/maintenance.jpg" alt="Maintenance Certificate" loading="lazy">
-                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> <span data-lang-id="Lihat Sertifikat">View Certificate</span></span>
                         </button>
                         <div class="certification-content">
                             <div class="certification-meta"><span>2026</span><i class="fa-solid fa-screwdriver-wrench"></i></div>
-                            <h3>Ministry Internship Program</h3>
+                            <h3 data-lang-id="Program Magang Kementerian">Ministry Internship Program</h3>
                             <p>Maintenance — Batch 2</p>
                         </div>
                     </article>
@@ -2619,11 +2696,11 @@ body::before{
                     <article class="certification-card">
                         <button class="certificate-image" type="button" data-certificate="sertifikat/amati.jpg">
                             <img src="sertifikat/amati.jpg" alt="AMATI Certificate" loading="lazy">
-                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> <span data-lang-id="Lihat Sertifikat">View Certificate</span></span>
                         </button>
                         <div class="certification-content">
                             <div class="certification-meta"><span>2024</span><i class="fa-solid fa-trophy"></i></div>
-                            <h3>Certified Internship Program</h3>
+                            <h3 data-lang-id="Program Magang Bersertifikat">Certified Internship Program</h3>
                             <p>Wallacea Project / AMATI</p>
                         </div>
                     </article>
@@ -2631,11 +2708,11 @@ body::before{
                     <article class="certification-card">
                         <button class="certificate-image" type="button" data-certificate="sertifikat/sharp.jpg">
                             <img src="sertifikat/sharp.jpg" alt="PT Sharp Indonesia Certificate" loading="lazy">
-                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> View Certificate</span>
+                            <span class="certificate-overlay"><i class="fa-solid fa-expand"></i> <span data-lang-id="Lihat Sertifikat">View Certificate</span></span>
                         </button>
                         <div class="certification-content">
                             <div class="certification-meta"><span>2020</span><i class="fa-solid fa-tv"></i></div>
-                            <h3>Audio Video Training</h3>
+                            <h3 data-lang-id="Pelatihan Audio Video">Audio Video Training</h3>
                             <p>PT Sharp Indonesia</p>
                         </div>
                     </article>
@@ -2664,16 +2741,16 @@ body::before{
 
                     <div class="cta-content">
 
-                        <p class="section-label">
+                        <p class="section-label" data-lang-id="MENCARI INSINYUR?">
                             LOOKING FOR AN ENGINEER?
                         </p>
 
-                        <h2>
+                        <h2 data-lang-id="Mari membangun sesuatu yang <span>bermanfaat.</span>">
                             Let's build something
                             <span>useful.</span>
                         </h2>
 
-                        <p>
+                        <p data-lang-id="Terbuka untuk peluang kerja, proyek rekayasa, dan kolaborasi di bidang teknologi.">
                             Open to job opportunities,
                             engineering projects, and
                             collaboration in technology.
@@ -2682,7 +2759,7 @@ body::before{
 
                         <a href="#contact" class="btn btn-primary">
 
-                            Contact Me
+                            <span data-lang-id="Hubungi Saya">Contact Me</span>
 
                             <i class="fa-solid fa-arrow-right"></i>
 
@@ -2709,11 +2786,11 @@ body::before{
 
                     <div>
 
-                        <p class="section-label">
+                        <p class="section-label" data-lang-id="HUBUNGI SAYA">
                             GET IN TOUCH
                         </p>
 
-                        <h2>
+                        <h2 data-lang-id="Mari <span>Terhubung.</span>">
                             Let's
                             <span>Connect.</span>
                         </h2>
@@ -2728,7 +2805,7 @@ body::before{
 
                     <div class="contact-info">
 
-                        <p>
+                        <p data-lang-id="Saya terbuka untuk peluang kerja, proyek rekayasa, kolaborasi, dan diskusi seputar teknologi.">
 
                             I'm open to job opportunities,
                             engineering projects, collaboration,
@@ -2772,7 +2849,7 @@ body::before{
 
                             <div>
 
-                                <span>
+                                <span data-lang-id="Telepon">
                                     Phone
                                 </span>
 
@@ -2795,7 +2872,7 @@ body::before{
 
                             <div>
 
-                                <span>
+                                <span data-lang-id="Lokasi">
                                     Location
                                 </span>
 
@@ -2875,7 +2952,7 @@ body::before{
 
                             <div class="form-group">
 
-                                <label>
+                                <label data-lang-id="Nama">
                                     Name
                                 </label>
 
@@ -2883,7 +2960,7 @@ body::before{
                                     type="text"
                                     id="name"
                                     placeholder="Your name"
-                                    required>
+                                    required data-lang-id-placeholder="Nama Anda">
 
                             </div>
 
@@ -2907,7 +2984,7 @@ body::before{
 
                         <div class="form-group">
 
-                            <label>
+                            <label data-lang-id="Subjek">
                                 Subject
                             </label>
 
@@ -2915,14 +2992,14 @@ body::before{
                                 type="text"
                                 id="subject"
                                 placeholder="Job opportunity / Project / Collaboration"
-                                required>
+                                required data-lang-id-placeholder="Peluang kerja / Proyek / Kolaborasi">
 
                         </div>
 
 
                         <div class="form-group">
 
-                            <label>
+                            <label data-lang-id="Pesan">
                                 Message
                             </label>
 
@@ -2930,14 +3007,14 @@ body::before{
                                 id="message"
                                 rows="6"
                                 placeholder="Write your message..."
-                                required></textarea>
+                                required data-lang-id-placeholder="Tulis pesan Anda..."></textarea>
 
                         </div>
 
 
                         <button
                             type="submit"
-                            class="btn btn-primary form-button">
+                            class="btn btn-primary form-button" data-lang-id="Kirim Pesan">
 
                             Send Message
 
@@ -2968,7 +3045,7 @@ body::before{
             </div>
 
 
-            <p>
+            <p data-lang-id="&copy; 2026 Wisnu Rahmat Dwi Putra. Insinyur Elektro.">
                 © 2026 Wisnu Rahmat Dwi Putra.
                 Electrical Engineer.
             </p>
@@ -3779,6 +3856,97 @@ document.addEventListener("DOMContentLoaded", () => {
     img.addEventListener("load", reveal, { once: true });
     img.addEventListener("error", reveal, { once: true });
   });
+});
+</script>
+
+<script>
+/* =========================================================
+   NEW FEATURE 8 -- PAGE PRELOADER
+   Shows a short branded loading screen on first paint and
+   fades it out once the page (and webfonts) are ready.
+   ========================================================= */
+(function () {
+  const preloader = document.getElementById("sitePreloader");
+  if (!preloader) return;
+
+  const MIN_VISIBLE = 700;
+  const shownAt = Date.now();
+
+  function hide() {
+    const elapsed = Date.now() - shownAt;
+    const wait = Math.max(0, MIN_VISIBLE - elapsed);
+    setTimeout(() => {
+      preloader.classList.add("preloader-hide");
+      document.body.classList.add("site-loaded");
+      setTimeout(() => preloader.remove(), 700);
+    }, wait);
+  }
+
+  const fontsReady = (document.fonts && document.fonts.ready)
+    ? document.fonts.ready
+    : Promise.resolve();
+
+  const pageReady = new Promise(resolve => {
+    if (document.readyState === "complete") resolve();
+    else window.addEventListener("load", resolve, { once: true });
+  });
+
+  Promise.race([
+    Promise.all([fontsReady, pageReady]),
+    new Promise(resolve => setTimeout(resolve, 3000)) // hard fallback
+  ]).then(hide);
+})();
+</script>
+
+<script>
+/* =========================================================
+   NEW FEATURE 9 -- ID / EN LANGUAGE TOGGLE
+   Translates the page between English (default) and
+   Indonesian using data-lang-id attributes, remembers the
+   visitor's choice, and updates <html lang>.
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const buttons = document.querySelectorAll(".lang-btn");
+  if (!buttons.length) return;
+
+  const STORAGE_KEY = "portfolio-lang";
+  const textEls = document.querySelectorAll("[data-lang-id]");
+  const placeholderEls = document.querySelectorAll("[data-lang-id-placeholder]");
+
+  function applyLang(lang) {
+    textEls.forEach(el => {
+      if (el.dataset.langEn === undefined) el.dataset.langEn = el.innerHTML;
+      el.innerHTML = lang === "id" ? el.dataset.langId : el.dataset.langEn;
+    });
+
+    placeholderEls.forEach(el => {
+      if (el.dataset.langEnPlaceholder === undefined) {
+        el.dataset.langEnPlaceholder = el.getAttribute("placeholder") || "";
+      }
+      el.setAttribute(
+        "placeholder",
+        lang === "id" ? el.dataset.langIdPlaceholder : el.dataset.langEnPlaceholder
+      );
+    });
+
+    document.documentElement.setAttribute("lang", lang);
+
+    buttons.forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (!btn.classList.contains("active")) applyLang(btn.dataset.lang);
+    });
+  });
+
+  let saved = "en";
+  try { saved = localStorage.getItem(STORAGE_KEY) || "en"; } catch (e) {}
+  if (saved === "id") applyLang("id");
 });
 </script>
 
